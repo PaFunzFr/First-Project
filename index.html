@@ -4,15 +4,21 @@
     <meta charset = "utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StePat Title tbd</title>
-    <link rel="stylesheet" href="styles/main.css" type="text/css">
+    <link rel="stylesheet" href="02-resources/21-css/main.css" type="text/css">
+    <link rel="stylesheet" href="02-resources/21-css/grid.css" type="text/css">
+    <!-- Favicon Defition -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/02-resources/25-favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/02-resources/25-favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/02-resources/25-favicon/favicon-16x16.png">
+    <link rel="manifest" href="/02-resources/25-favicon/site.webmanifest">
+    <!-- Favicon Definition End-->
 </head>
 
 <body>
-    <nav class="buttonContainer">
+    <nav class="buttonMenuContainer">
     <div>
-        <img src="bild.jpg" width="30" height="30" alt="MenueSymbol">
-           <br>
-       <button id="buttonMenu">MENU</button>
+        <img src="bild.jpg" width="30" height="30" alt="MenueSymbol" id="menuImage">
+        <button id="buttonMenu">MENU</button>
    </div>
     </nav>
     <nav class="menuContainer">
@@ -34,25 +40,58 @@
     <header class="blurContent">
         <div class="iconBar">
             <ul>
-                <li><a href="index.html">Icon</a></li>
-                <li><h1>SEITENTITEL</h1></li>
-                <li><a href="#">LinkedIn</a></li>
-                <li><a href="#">GitHub</a></li>
-                <li><a href="#">Komoot</a></li>
+                <li><a href="index.html">
+                        <img src="/02-resources/23-images/StePat_Logo_colorized.png" alt="" Class="logoTop" tag="LogoSmall">
+                    </a>
+                </li>
+                <li>SEITENTITEL</li>
+                <li><a href="">
+                        <img src="bild.jpg" width="20" height="20" alt="" tag="LinkedIn">
+                    </a>
+                </li>
+                <li><a href="https://github.com/funzlon">
+                        <img src="bild.jpg" width="20" height="20" alt="" tag="gitHub">
+                    </a>
+                </li>
+                <li><a href="">
+                    <img src="bild.jpg" width="20" height="20" alt="" tag="Komoot">
+                </a>
+            </li>
             </ul>
         </div>
     </header>
-    <main class="blurContent">
-        <section class="leftHomeContainer">
-            <h2>About Us</h2>
-            <p>This is a brief introduction about our company.</p>
-            <p><a href="#">GitHub</a></p>
-        </section>
+    <main class="blurContent" id="mainPage">
+        <div class="border"></div>
 
-        <section class="leftHomeContainer">
-            <h2>Contact Us</h2>
-            <p>Reach out to us via email: info@example.com</p>
-        </section>
+            <section class="content">
+
+                <div class="welcome">
+                    <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
+                    <p>WELCOME</p>
+                </div>
+
+                <section class="leftHomeContainer">
+                    <div>a</div>
+                </section>
+
+                <section class="rightHomeContainer">
+                    <div>b</div>
+                </section>
+
+            </section>
+
+            <div class="welcome">
+                <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
+                <p>WELCOME</p>
+            </div>   <div class="welcome">
+                <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
+                <p>WELCOME</p>
+            </div>   <div class="welcome">
+                <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
+                <p>WELCOME</p>
+            </div>
+
+        <div class="border"></div>
     </main>
 
     <footer class="blurContent">
@@ -61,7 +100,7 @@
     </footer>
 </body>
 
-<script src="scripts/main.js"></script>
+<script src="02-resources/22-js/main.js"></script>
 
 
 </html>
