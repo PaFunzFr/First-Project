@@ -1,6 +1,6 @@
 let isMenuOpen = false;
 let menuContainer = document.querySelector('.menuContainer');
-let menuButton = document.querySelector('.buttonContainer');
+let menuButton = document.querySelector('.buttonMenuContainer');
 let singleButtonMenu = document.getElementById('buttonMenu');
 let getBlur = document.querySelectorAll('.blurContent'); // Definition NodeList
 
