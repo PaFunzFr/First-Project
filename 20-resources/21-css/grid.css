@@ -1,0 +1,18 @@
+#mainPage {
+    display: grid;
+    grid-template-columns:5% auto 5%;
+    grid-template-areas:
+                "border"
+                "content"
+                "border"; 
+}
+
+.border {
+    grid-area: "border";
+}
+
+.content {
+    grid-area: "content";
+}
+
+

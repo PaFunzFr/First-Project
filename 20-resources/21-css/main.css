@@ -1,19 +1,20 @@
-.buttonContainer {
+.buttonMenuContainer {
     position : fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-    left: 4%;
+    left: 5%;
+    margin-left:-5pt;
     top: 50%;
     transform: translateY(-50%);
     z-index: 4;
 }
 
-.buttonContainer div {
+.buttonMenuContainer div {
     display: flex;
 }
 
-.buttonContainer button {
+.buttonMenuContainer button {
     align-items: center;
     background: none;
     color: white; 
@@ -26,8 +27,11 @@
     margin-left: -10px;
 }
 
-nav.buttonContainer:hover {
+nav.buttonMenuContainer:hover {
     cursor: pointer; /* Zeige die Handcursor beim Überfahren */
+    scale: 1.1;
+    margin-left: -4pt;
+
 }
 
 #buttonMenu {
@@ -57,7 +61,7 @@ nav.buttonContainer:hover {
   }
 
 .navListContainer ul li:first-child {
-    font-size: 25pt;
+    font-size: 24pt;
     color: rgba(240,173,91,1)
 }
 
@@ -97,7 +101,7 @@ header {
     background-color: black;
     color: white;
     position: fixed;
-    height: 75px;
+    height: 60px;
     top : 0;
     left: 0;
     right: 0;
@@ -110,24 +114,41 @@ header {
     padding: 0;
     display: flex;
     align-items: center;
-    height:75px;
+    height:60px;
 }
 
 /* Abstand Listeneinträge nach rechts automatisch */
 /* erster <li> ist linksbündig, alle anderen rechts */
 .iconBar ul li:first-child {
-    margin-left: 60px;
+    margin-left: 7%;
+}
+
+.logoTop {
+    width: 35px;
+    height: 35px;
 }
 
 .iconBar ul li:nth-child(2) {
+    font-size: 20pt;
     margin-right: auto;
-    margin-left: 15px;
-    color: rgba(240,173,91,1)
+    margin-left: 5px;
+    color: rgba(240,173,91,1);
 }
+@media only screen and (max-width: 800px) {
+    .iconBar ul li:nth-child(2)  {
+        font-size: 18pt;
+    }
+  }
+
+@media only screen and (max-width: 400px) {
+    .iconBar ul li:nth-child(2)  {
+        font-size: 12pt;
+    }
+  }
 
 /*Abstand letzter <li> rechts */
 .iconBar ul li:last-child {
-    margin-right: 60px; 
+    margin-right: 7%; 
 }
 
 /* Abstand zwischen Listeneinträgen */
@@ -147,19 +168,102 @@ header {
 
 
 /* MAIN CONTENT */
+.content {
+    display: flex;
+    left: 5%;
+    right: 5%;
+}
+
+.welcome {
+    order: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin-top: -45pt;
+    justify-content: center;
+
+}
+
+.leftHomeContainer {
+    order: 2;
+    position:static;
+    height: calc(100vh - 120px);
+    width:50%;
+    background-color: lightblue; /* Farbe des Rechtecks */
+    opacity: 40%;
+    z-index: -1;
+
+}
+
+
+.rightHomeContainer {
+    order: 3;
+    background-color: rgb(51, 255, 0);
+
+}
+
+.welcome p {
+    font-size: 24pt;
+    letter-spacing: 15pt;
+    transform: scaleY(1.6);
+    font-stretch: expanded;
+}
+
+@media only screen and (max-width: 1000px) {
+    .welcome img {
+      height: 200px;
+      width: 200px;
+    }
+  }
+
+@media only screen and (max-width: 1000px) {
+    .welcome p {
+        font-size: 20pt;
+        letter-spacing: 10pt;
+        transform: scaleY(1.6);
+        font-stretch: expanded;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .welcome img {
+      height: 100px;
+      width: 100px;
+    }
+  }
+
+@media only screen and (max-width: 700px) {
+    .welcome p {
+        font-size: 14pt;
+        letter-spacing: 4pt;
+        transform: scaleY(1.6);
+        font-stretch: expanded;
+    }
+}
+
+
+
+.border {
+    background-color: red;
+}
+
 main {
     display: flex;
-    filter: blur(15px);
-    margin-top: 75px;
-    margin-left: 60px;
-    margin-bottom: 75px;
+    margin-top: 60px;
+    margin-bottom: 60px;
     color: white;
-}
+    height: calc(100vh - 150px);
+} 
+
+
+
+
 
 /* FOOTER */
 footer {
     background-color: black;
-    height: 75px;
+    height: 60px;
     position: fixed;
     left: 0;
     right: 0;
@@ -174,4 +278,5 @@ footer {
 
 body {
     background-color: rgb(0, 0, 0);
+    font-family:Arial, Helvetica, sans-serif;
 }
