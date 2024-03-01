@@ -2,7 +2,7 @@ let isMenuOpen = false;
 let menuContainer = document.querySelector('.menuContainer');
 let menuButton = document.querySelector('.buttonMenuContainer');
 let singleButtonMenu = document.getElementById('buttonMenu');
-let getBlur = document.querySelectorAll('.blurContent'); // Definition NodeList
+let getBlur = document.querySelectorAll('.affectedByBlurToggle'); // Definition NodeList
 
 function toggleMenu() {
 
@@ -12,9 +12,9 @@ function toggleMenu() {
         menuContainer.style.opacity = 1;
         menuContainer.style.background = 'linear-gradient(to left, rgba(0, 0, 0, 0) 1%, rgba(0, 113, 138, 1) 100%)';
      
-            getBlur.forEach(function(blur) {        //greife alle aus NodeList mit .getBlur
-                blur.style.filter = 'blur(5px)';
-                blur.style.transition = 'filter 0.9s ease'; // Blur Transition
+            getBlur.forEach(function(x) {        //greife alle aus NodeList mit .getBlur
+                x.style.filter = 'blur(5px) saturate(0)'; //blur & saturation
+                x.style.transition = 'filter 0.9s ease'; // Blur Transition
             });
 
         isMenuOpen = true;
@@ -26,9 +26,9 @@ function toggleMenu() {
         menuContainer.style.opacity = 0;
         menuContainer.style.background = 'linear-gradient(to left, rgba(0, 0, 0, 0) 1%, rgba(0, 113, 138, 1) 100%)';
 
-            getBlur.forEach(function(blur){
-                blur.style.filter = 'none';
-                blur.style.transition = 'filter 0.9s ease';
+            getBlur.forEach(function(x){
+                x.style.filter = 'none';
+                x.style.transition = 'filter 0.9s ease';
             });
 
         isMenuOpen = false;
