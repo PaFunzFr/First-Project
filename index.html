@@ -15,14 +15,20 @@
 </head>
 
 <body>
+
+<!-- MAIN MENU -->
+
+    <!-- Main Menu Button -->
     <nav class="buttonMenuContainer">
     <div>
         <img src="bild.jpg" width="30" height="30" alt="MenueSymbol" id="menuImage">
         <button id="buttonMenu">MENU</button>
    </div>
     </nav>
+
     <nav class="menuContainer">
         <div class="navListContainer">
+            <!-- unsorted List Navigation Main Menu -->
             <ul>
                 <li>NAVIGATION</li>
                 <li><a href="index.html">HOME</a></li>
@@ -33,68 +39,76 @@
                 <li><a href="#">VEGAN FOOD</a></li>
                 <li><a href="#">CURRICULUM VITAE</a></li>
                 <li><a href="#"></a></li>
-                <li><button label="contactButton">CONTACT</button></li>                
+                <li><button>CONTACT</button></li>                
             </ul>
         </div>
      </nav>
-    <header class="blurContent">
+
+<!-- HEADER -->
+
+    <header class="affectedByBlurToggle"> <!-- part of toggleMenu -->
         <div class="iconBar">
+            <!-- unsorted List Icon Bar -->
             <ul>
-                <li><a href="index.html">
-                        <img src="/02-resources/23-images/StePat_Logo_colorized.png" alt="" Class="logoTop" tag="LogoSmall">
-                    </a>
-                </li>
+                <!-- Header Logo -->
+                <li><a href="index.html"><img src="/02-resources/23-images/logo_iconBar.png" alt="" Class="logoTop" tag="LogoSmall"></a></li>
+                <!-- TITLE -->
                 <li>SEITENTITEL</li>
-                <li><a href="">
-                        <img src="bild.jpg" width="20" height="20" alt="" tag="LinkedIn">
-                    </a>
-                </li>
-                <li><a href="https://github.com/funzlon">
-                        <img src="bild.jpg" width="20" height="20" alt="" tag="gitHub">
-                    </a>
-                </li>
-                <li><a href="">
-                    <img src="bild.jpg" width="20" height="20" alt="" tag="Komoot">
-                </a>
-            </li>
+                <!-- Link to LinkedIn -->
+                <li><a href=""><img src="bild.jpg" width="20" height="20" alt="" tag="LinkedIn"></a></li>
+                <!-- Link to gitHub -->
+                <li><a href="https://github.com/funzlon"><img src="bild.jpg" width="20" height="20" alt="" tag="gitHub"></a></li>
+                <!-- Link to Komoot -->
+                <li><a href=""><img src="bild.jpg" width="20" height="20" alt="" tag="Komoot"></a></li>
             </ul>
         </div>
     </header>
-    <main class="blurContent" id="mainPage">
-        <div class="border"></div>
+<!-- MAIN CONTENT -->
+    <main class="affectedByBlurToggle" id="mainPage"> <!-- part of toggleMenu -->
 
-            <section class="content">
+            <div class="content">
 
+                <!-- Main Logo Center -->
                 <div class="welcome">
                     <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
                     <p>WELCOME</p>
                 </div>
 
+                <!-- ForeGround Gradient -->
+                <div class="blueGradient"></div>
+
+                <!-- Home & News Content Left -->
                 <section class="leftHomeContainer">
-                    <div>a</div>
+
+                    <div class="newsList">
+                        <ul>
+                            <li>nla</li>
+                            <li>nla</li>
+                            <li>nla</li>
+                            <li>nla</li>
+                        </ul>
+                    </div>
+
                 </section>
 
+                <!-- Home & News Content Right -->
                 <section class="rightHomeContainer">
-                    <div>b</div>
-                </section>
-
-            </section>
-
-            <div class="welcome">
-                <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
-                <p>WELCOME</p>
-            </div>   <div class="welcome">
-                <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
-                <p>WELCOME</p>
-            </div>   <div class="welcome">
-                <img src="/02-resources/23-images/StePat_Logo.png" alt="StePat-Logo" width="250px" height="250px">
-                <p>WELCOME</p>
+                    <div><img src="02-resources/23-images/website_main.png"></div> <!--Background Images-->
+                </section>           
             </div>
-
-        <div class="border"></div>
     </main>
 
-    <footer class="blurContent">
+    <div class="newsList" class="content">
+        <ul>
+            <li>nla</li>
+            <li>nla</li>
+            <li>nla</li>
+            <li>nla</li>
+        </ul>
+    </div>
+
+<!-- FOOTER -->
+    <footer class="affectedByBlurToggle"> <!-- part of toggleMenu -->
         <div id="movingCamper">d</div>
         <p>&copy; 2024 My Website. All rights reserved.</p>
     </footer>
