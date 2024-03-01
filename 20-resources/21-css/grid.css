@@ -1,5 +1,7 @@
-#mainPage {
+/* #mainPage {
     display: grid;
+    top: 60px;
+    bottom: 60px;
     grid-template-columns:5% auto 5%;
     grid-template-areas:
                 "border"
@@ -13,6 +15,7 @@
 
 .content {
     grid-area: "content";
-}
 
+}
+*/
 

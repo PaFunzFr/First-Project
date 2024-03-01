@@ -1,3 +1,7 @@
+/* MAIN MENU (left) */
+/*----------------------------*/
+
+/* Styling Main Menu Button */
 .buttonMenuContainer {
     position : fixed;
     display: flex;
@@ -14,31 +18,41 @@
     display: flex;
 }
 
+/* Styling the Button of container buttonMenuContainer */
 .buttonMenuContainer button {
     align-items: center;
     background: none;
     color: white; 
     padding: 3px 3px; 
-    border: none; /* Entferne die Rahmenlinie */
+    border: none; 
     border-radius: 5px; 
-    cursor: pointer; /* Zeige die Handcursor beim Überfahren */
+    cursor: pointer; 
     font-size: 16px; 
     transform: rotate(-90deg);
     margin-left: -10px;
 }
 
+/* responsiveness of the button */
+@media only screen and (max-width: 500px) {
+    .buttonMenuContainer button {
+        opacity : 0;
+    }
+}
+
+/* style by hover */
 nav.buttonMenuContainer:hover {
-    cursor: pointer; /* Zeige die Handcursor beim Überfahren */
+    cursor: pointer; 
     scale: 1.1;
     margin-left: -4pt;
 
 }
 
+/* Transition / Effects */
 #buttonMenu {
     transition: opacity 0.4s ease;
 }
 
-/* Navigation Bar */
+/* Navigation Bar / Menu Site */
 .menuContainer {
     display: flex;
     width: 100%;
@@ -60,6 +74,7 @@ nav.buttonMenuContainer:hover {
     list-style-type: none;
   }
 
+/* Title Menu */
 .navListContainer ul li:first-child {
     font-size: 24pt;
     color: rgba(240,173,91,1)
@@ -76,6 +91,7 @@ nav.buttonMenuContainer:hover {
     text-decoration: none;
 }
 
+/* Styling Button CONTACT */
 .navListContainer button {
     border-radius: 4%;
     border-style: none;
@@ -86,17 +102,20 @@ nav.buttonMenuContainer:hover {
     margin-top: 20px;
 }
 
+/* <a> Effect Menu */
 .navListContainer ul li a:hover {
     cursor: pointer; /* Zeige die Handcursor beim Überfahren */
     color: rgb(230, 162, 35);
 }
 
+/* button CONTACT Effect Menue */
 .navListContainer button:hover {
     cursor: pointer; /* Zeige die Handcursor beim Überfahren */
     background-color: rgb(230, 162, 35);
 }
 
 /* HEADER */
+/*----------------------------*/
 header {
     background-color: black;
     color: white;
@@ -105,7 +124,7 @@ header {
     top : 0;
     left: 0;
     right: 0;
-    z-index: 0;
+    z-index: 10;
 }
 
 .iconBar ul {
@@ -117,23 +136,26 @@ header {
     height:60px;
 }
 
-/* Abstand Listeneinträge nach rechts automatisch */
-/* erster <li> ist linksbündig, alle anderen rechts */
+/* Main Icon / Logo */
 .iconBar ul li:first-child {
     margin-left: 7%;
 }
 
+/* define Size Logo */
 .logoTop {
     width: 35px;
     height: 35px;
 }
 
+/* Homepage Title */
 .iconBar ul li:nth-child(2) {
     font-size: 20pt;
     margin-right: auto;
     margin-left: 5px;
     color: rgba(240,173,91,1);
 }
+
+/* responsiveness Homepage Title */
 @media only screen and (max-width: 800px) {
     .iconBar ul li:nth-child(2)  {
         font-size: 18pt;
@@ -146,63 +168,61 @@ header {
     }
   }
 
-/*Abstand letzter <li> rechts */
+/* last Element IconBar */
 .iconBar ul li:last-child {
     margin-right: 7%; 
 }
 
-/* Abstand zwischen Listeneinträgen */
+/* space between Elements IconBar */
 .iconBar ul li {
     margin-left: 15px; 
 }
 
-/* Hyperlink-Formatierung */
+/* Styling Hyperlink */
 .iconBar ul li a {
     color: white;
     text-decoration: none;
 }
 
+/* Effect Hyperlink */
 .iconBar ul li a:hover {
     color: rgba(240,173,91,1)
 }
 
-
 /* MAIN CONTENT */
+/*----------------------------*/
+
+main {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: white;
+    height: calc(100vh - 150px);
+    position: relative;
+} 
+
+
 .content {
     display: flex;
-    left: 5%;
-    right: 5%;
+    justify-content: space-between;
+    width: 90%;
 }
 
+/* Main Logo Center */
 .welcome {
-    order: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    margin-top: -45pt;
-    justify-content: center;
-
+    align-items: center; 
+    justify-content: center; 
+    position: absolute;
+    top:60%;
+    left:50%;
+    transform: translate(-50%, -60%);
+    z-index: 2;
 }
 
-.leftHomeContainer {
-    order: 2;
-    position:static;
-    height: calc(100vh - 120px);
-    width:50%;
-    background-color: lightblue; /* Farbe des Rechtecks */
-    opacity: 40%;
-    z-index: -1;
-
-}
-
-
-.rightHomeContainer {
-    order: 3;
-    background-color: rgb(51, 255, 0);
-
-}
-
+/* Font Style Main Logo */
 .welcome p {
     font-size: 24pt;
     letter-spacing: 15pt;
@@ -210,14 +230,15 @@ header {
     font-stretch: expanded;
 }
 
-@media only screen and (max-width: 1000px) {
+/*responsiveness Main Logo*/
+@media only screen and (max-width: 1024px) {
     .welcome img {
       height: 200px;
       width: 200px;
     }
   }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1024px) {
     .welcome p {
         font-size: 20pt;
         letter-spacing: 10pt;
@@ -243,24 +264,89 @@ header {
 }
 
 
-
-.border {
-    background-color: red;
+/* Front Styling Gradient */
+.blueGradient {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    position: absolute;
+    height: calc(100vh - 120px);
+    width: 90%; 
+    overflow: hidden;
+    border-radius: 20px;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 1%, rgba(0, 113, 138, 1) 100%);
+    z-index: 1;
 }
 
-main {
+/* left Site Home */
+.leftHomeContainer {
+    display:flex;
+    flex-direction: column; 
+    height: calc(100vh - 120px);
+    width: 50%; 
+    background: linear-gradient(to right, rgba(25, 25, 25, 1) 2%, rgba(0, 0, 0, 0) 95%);
+    opacity: 100%;
+    z-index: -1;
+    overflow: visible;
+    border-radius: 20px 0 0 20px;
+}
+
+/*responsiveness left Site Home */
+@media only screen and (max-width: 1024px) {
+    .leftHomeContainer {
+        width: 20%; 
+    }
+}
+@media only screen and (max-width: 500px) {
+    .leftHomeContainer {
+        width: 0%; 
+    }
+}
+
+/* right Site Home */
+.rightHomeContainer {
+
     display: flex;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    color: white;
-    height: calc(100vh - 150px);
-} 
+    flex-direction: column; 
+    height: calc(100vh - 120px);
+    width: 50%; 
+    opacity: 100%;
+    z-index: -1;
+    overflow: hidden; /* overflow background Image */
+    border-radius: 0 20px 20px 0;
+    background-color: rgb(73, 73, 27);
+}
 
+.rightHomeContainer div {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
+/* Background Image */
+.rightHomeContainer div img {
+    width: auto; 
+    height: 100%;
+    position: absolute;
+    left: 0;
+};
 
-
+/*responsiveness right Site Home */
+@media only screen and (max-width: 1024px) {
+    .rightHomeContainer {
+        width: 80%; 
+    }
+}
+@media only screen and (max-width: 500px) {
+    .rightHomeContainer {
+        width: 100%; 
+        border-radius: 20px;
+    }
+}
 
 /* FOOTER */
+/*----------------------------*/
+
 footer {
     background-color: black;
     height: 60px;
@@ -270,11 +356,12 @@ footer {
     bottom: 0;
 }
 
- .blurContent {
+ .affectedByBlurToggle {
     filter: none;
 }
 
-/* body ALLGEMEIN */
+/* BODY / GENERAL */
+/*----------------------------*/
 
 body {
     background-color: rgb(0, 0, 0);
