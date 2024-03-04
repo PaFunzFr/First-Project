@@ -111,10 +111,67 @@ function updateRandomImage() {
 }
 
 updateRandomImage();
-setInterval(updateRandomImage, 14000); // Switch every x miliseconds
+setInterval(updateRandomImage, 10000); // Switch every x miliseconds
+
+/* NewsList */
+/*----------------------------------------------------------------*/
+
+const newsList = [
+    {newsDate: '02/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+    {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+    {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+    {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+    {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+    {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+];
 
 
-/* Old shit */
+
+
+/* Hide / Unhide Effects */
+/*----------------------------------------------------------------*/
+
+const checkVisibility = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        // console.log(entry);
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
+        }
+    });
+});
+
+const getHiddenElementsToRight = document.querySelectorAll('.hiddenToRight');
+getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
+
+/* SCROLL EVENT HOME */
+/*----------------------------------------------------------------*/
+
+const content = document.querySelector('.content');
+content.style.width = '90%' ;
+
+
+window.addEventListener('scroll', () => {
+        console.log(window.scrollY); // Ausgabe Position Y
+        const currentScroll = window.scrollY;
+
+        if (currentScroll <= 300) {
+            console.log('kleiner 300');
+            content.style.position = 'fixed';
+            content.style.top = '60px';
+            content.style.opacity = 1;
+
+        } else { 
+
+            content.style.bottom = '60px';
+            content.style.opacity = 0;
+        }
+});
+
+
+
+        /* Old shit */
 /*----------------------------------------------------------------*/
 /* defined via @media only screen for .welcome img 
 
