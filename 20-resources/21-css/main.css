@@ -1,3 +1,38 @@
+/*Fonts API */
+
+@import url('https://fonts.googleapis.com/css2?family=Slackside+One&display=swap');
+
+
+.hiddenToRight {
+    opacity: 0;
+    transition: opacity 3s, transform 2s;
+    transform: translateX(-100%);
+
+}
+
+.hide {
+    transform: translateX(-100%);
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 3s, transform 2s;
+    transform: translateX(0);
+}
+
+.centered {
+    display: grid;
+    align-content: center;
+    place-items: center;
+}
+
+.newsListdd {
+    background-color: white;
+
+}
+
+
+
 /* HTML ROOT Element */
 html {
     font-size: 16px;
@@ -224,8 +259,12 @@ main {
 
 .content {
     display: flex;
+    position: sticky;
+    top: calc(100vh - 120px);
+    height: calc(100vh - 120px);
     justify-content: space-between;
-    width: 90%;
+
+
 }
 
 /* Main Logo Center */
@@ -332,16 +371,17 @@ main {
 
 /* News List */
 .newsList {
+    top: 50%;
     display:flex;
     flex-direction: column; 
     position: absolute; 
     height: calc(100vh - 120px);
     width: 45%; 
     background-color: white;
-    opacity: 100%;
+    opacity: 0;
     z-index: 2;
     overflow: hidden;
-    opacity: 40%;
+    opacity: 0;
     border-radius: 20px;
 }
 
@@ -350,6 +390,7 @@ main {
         width: 90%;
     }
 }
+
 
 /* right Site Home */
 .rightHomeContainer {
