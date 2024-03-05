@@ -7,7 +7,6 @@
     opacity: 0;
     transition: opacity 3s, transform 2s;
     transform: translateX(-100%);
-
 }
 
 .hide {
@@ -20,35 +19,36 @@
     transform: translateX(0);
 }
 
-.centered {
-    display: grid;
-    align-content: center;
-    place-items: center;
-}
-
-.newsListdd {
-    background-color: white;
-
-}
-
-
 
 /* HTML ROOT Element */
 html {
     font-size: 16px;
-    max-width: 2600px;
-    margin: 0 auto;
 }
 
-/* MAIN MENU (left) */
+/* FOOTER */
+/*----------------------------*/
+
+footer {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    color: white;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+
+/* MAIN MENU / NAVIDATION (left side Button) */
 /*----------------------------*/
 
 /* Styling Main Menu Button */
 .buttonMenuContainer {
-    position : fixed;
     display: flex;
+    position : fixed;
     align-items: center;
-    justify-content: center;
     left: 5%;
     margin-left:-5pt;
     top: 50%;
@@ -56,18 +56,27 @@ html {
     z-index: 5;
 }
 
-.buttonMenuContainer div {
+.menuButton {
     display: flex;
+    align-items: center;
+}
+
+.centerButton {
+    display: flex;
+    align-items: center;
+}
+
+#menuImage {
+    width: 30px;
+    height: 30px;
 }
 
 /* Styling the Button of container buttonMenuContainer */
-.buttonMenuContainer button {
-    align-items: center;
+.menuButton button {
     background: none;
     color: white; 
-    padding: 3px 3px; 
+    padding: 3px; 
     border: none; 
-    border-radius: 5px; 
     cursor: pointer; 
     font-size: 16px; 
     transform: rotate(-90deg);
@@ -157,11 +166,22 @@ nav.buttonMenuContainer:hover {
     background-color: rgb(230, 162, 35);
 }
 
+/* Scroll Down Icon */
+/*----------------------------*/
+
+.scrollDownArrow {
+    display: flex;
+    position:fixed;
+    bottom: 70px;
+    left: 50%;
+    color: rgba(240,173,91,1);
+    z-index: 6;
+}
+
 /* HEADER */
 /*----------------------------*/
 header {
-    background-color: black;
-    color: white;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
     position: fixed;
     height: 60px;
     top : 0;
@@ -247,25 +267,104 @@ header {
 
 main {
     display: flex;
-    justify-content: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    color: white;
-    height: calc(100vh - 150px);
-    position: relative;
-    max-width: 2600px;
+    flex-direction: column;
+    z-index: 1;
 } 
 
 
-.content {
+.centerMain {
     display: flex;
-    position: sticky;
-    top: calc(100vh - 120px);
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    display: flex;
+    max-width: 2000px;
+    margin: 60px auto;
+
+}
+
+
+
+.welcomeContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+} 
+
+
+.news {
+    display: flex;
+    flex-direction: column;
+    margin: 60px auto;
+    background-color: white;
+    width: 50vw;
+    z-index: 2;
+    height: 50vh;
+}
+
+.newsList {
+
+    margin-left: 0;
+    flex-direction: column;
+    list-style: none;
+
+    z-index: 2;
+}
+
+.newsList li{
+
+    margin-left: 0;
+    flex-direction: column;
+
+    z-index: 2;
+}
+
+.newsEntry {
+    background-color: red;
+}
+
+.leftContentHome {
+    display:flex;
+    width: 100%;
     height: calc(100vh - 120px);
-    justify-content: space-between;
+    background: linear-gradient(to right, rgba(25, 25, 25, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    opacity: 100%;
+    z-index: -1;
+    overflow: visible;
+
+}
+
+.rightContentHome {
+
+    display: flex;
+    height: calc(100vh - 120px);
+    opacity: 100%;
+    width: 100%;
+    z-index: -1;
+    overflow: hidden; /* overflow background Image */
 
 
 }
+
+.av {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* überlaufender Inhalt wird ausgeblendet */
+}
+
+/* Background Image */
+#mainImageRandom {
+    width: auto; 
+    height: 100%;
+    position: relative;
+    left: 0;
+    transition: opacity 2s ease;
+    object-fit: cover;
+    
+}
+
+
 
 /* Main Logo Center */
 .welcome {
@@ -278,6 +377,7 @@ main {
     left:50%;
     transform: translate(-50%, -60%);
     z-index: 2;
+    transition: opacity 3s;
 }
 
 /* Font Style Main Logo */
@@ -339,72 +439,12 @@ main {
     height: calc(100vh - 120px);
     width: 90%; 
     overflow: hidden;
-    border-radius: 20px;
     background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%);
     z-index: 1;
 }
 
-/* left Site Home */
-.leftHomeContainer {
-    display:flex;
-    flex-direction: column; 
-    height: calc(100vh - 120px);
-    width: 50%; 
-    background: linear-gradient(to right, rgba(25, 25, 25, 1) 0%, rgba(0, 0, 0, 0) 100%);
-    opacity: 100%;
-    z-index: -1;
-    overflow: visible;
-    border-radius: 20px 0 0 20px;
-}
-
-/*responsiveness left Site Home */
-@media only screen and (max-width: 1024px) {
-    .leftHomeContainer {
-        width: 20%; 
-    }
-}
-@media only screen and (max-width: 568px)  {
-    .leftHomeContainer {
-        width: 0%; 
-    }
-}
-
-/* News List */
-.newsList {
-    top: 50%;
-    display:flex;
-    flex-direction: column; 
-    position: absolute; 
-    height: calc(100vh - 120px);
-    width: 45%; 
-    background-color: white;
-    opacity: 0;
-    z-index: 2;
-    overflow: hidden;
-    opacity: 0;
-    border-radius: 20px;
-}
-
-@media only screen and (max-aspect-ratio: 4/5) {
-    .newsList {
-        width: 90%;
-    }
-}
 
 
-/* right Site Home */
-.rightHomeContainer {
-
-    display: flex;
-    flex-direction: column; 
-    height: calc(100vh - 120px);
-    width: 50%; 
-    opacity: 100%;
-    z-index: -1;
-    overflow: hidden; /* overflow background Image */
-    border-radius: 0 20px 20px 0;
-
-}
 
 /* foreground black gradient */
 .blackGradient {
@@ -417,53 +457,25 @@ main {
     background: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); 
 }
 
-.av {
-    height: 100%;
-    position: relative;
-    overflow: hidden; /* überlaufender Inhalt wird ausgeblendet */
-}
 
-/* Background Image */
-#mainImageRandom {
-    width: auto; 
-    height: 100%;
-    position: absolute;
-    left: 0;
-    transition: opacity 2s ease;
-    object-fit: cover;
-    
-}
 
-/*responsiveness right Site Home */
-@media only screen and (max-width: 1024px) {
-    .rightHomeContainer {
-        width: 80%; 
-    }
-}
-@media only screen and (max-width: 568px) {
-    .rightHomeContainer {
-        width: 100%; 
-        border-radius: 20px;
-    }
-}
-@media only screen and (min-aspect-ratio: 1380/580) {
-    .rightHomeContainer {
-        width: 0%; 
-        border-radius: 20px;
-    }
-}
 
-/* FOOTER */
+
+/* SITE CONTENT */
 /*----------------------------*/
 
-footer {
-    background-color: black;
-    height: 60px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
+.about {
+    display: relative;
+    background-color: rgb(40, 18, 18);
+    width: 100%;
+    height : 100%;
+    margin-top:60px;
+    margin-bottom: 60px;
+    width: 100%;
+    height: calc(100vh - 120px);
+};
+
+
 
  .affectedByBlurToggle {
     filter: none;
@@ -475,4 +487,5 @@ footer {
 body {
     background-color: rgb(0, 0, 0);
     font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
 }
