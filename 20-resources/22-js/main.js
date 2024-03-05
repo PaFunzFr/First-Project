@@ -89,25 +89,23 @@ function updateRandomImage() {
 
     const randomImageUrl = getRandomImage();
     nextBackgroundImage.src = randomImageUrl;
-    /* Setze die Opazität des nächsten Bildes auf 0, um es unsichtbar zu machen */
+
     nextBackgroundImage.style.opacity = 1;
     nextBackgroundImage.style.height = '100%';
 
-    /* Nach einer kurzen Verzögerung setze die Opazität des nächsten Bildes auf 1,
-    um einen sanften Übergang zu erzeugen */
 
         setTimeout(() => {
             currentBackgroundImage.style.opacity = 0;
             currentBackgroundImage.style.height = '100%';
 
-            // Nach einer weiteren kurzen Verzögerung aktualisiere das aktuelle Bild
+            // update Image after Delay
             setTimeout(() => {
                 currentBackgroundImage.src = randomImageUrl;
                 currentBackgroundImage.style.opacity = 1;
                 currentBackgroundImage.style.height = '100%';
 
-            }, 2000); // Zeit für die Übergangsanimation
-        }, 7000); // Verzögerung vor dem Einblenden des nächsten Bildes
+            }, 2000); // Transition Time
+        }, 7000); // Delay before next Image
 }
 
 updateRandomImage();
@@ -116,15 +114,39 @@ setInterval(updateRandomImage, 10000); // Switch every x miliseconds
 /* NewsList */
 /*----------------------------------------------------------------*/
 
+function buildNewsList(newsList) {
+    const getNewsListContainer = document.querySelector('.newsList');
+    getNewsListContainer.innerHTML = '';
+
+    newsList.forEach(function (news) {
+        const listItem = document.createElement('li');
+        listItem.classList.add('newsEntry'); // give html class
+
+        const listItemHeader = document.createElement('p');
+        listItemHeader.textContent = news.newsDate;
+        listItemHeader.classList.add('newsDate'); // give html class
+
+        const listItemText = document.createElement('p');
+        listItemText.textContent = news.newsText;
+        listItemText.classList.add('newsText'); // give html class
+
+        listItem.appendChild(listItemHeader);
+        listItem.appendChild(listItemText);
+
+        getNewsListContainer.appendChild(listItem);
+    });
+}
+
 const newsList = [
     {newsDate: '02/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
     {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
     {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
     {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
     {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
-    {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
+    {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'}
 ];
 
+buildNewsList(newsList);
 
 
 
@@ -147,62 +169,37 @@ getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
 
 /* SCROLL EVENT HOME */
 /*----------------------------------------------------------------*/
-
-const content = document.querySelector('.content');
-content.style.width = '90%' ;
-
-
+/*
 window.addEventListener('scroll', () => {
+
+    console.log(window.scrollY); // Ausgabe Position Y
+    const currentScroll = window.scrollY;
+    const content = document.querySelector('.start');
+    const newsList = document.querySelector('.news');
+    const mainLogoHome = document.querySelector('.welcome');
+
+
+
+    window.addEventListener('scroll', () => {
         console.log(window.scrollY); // Ausgabe Position Y
         const currentScroll = window.scrollY;
 
         if (currentScroll <= 300) {
             console.log('kleiner 300');
             content.style.position = 'fixed';
-            content.style.top = '60px';
+            content.style.margin = '60px auto';
             content.style.opacity = 1;
 
-        } else { 
+            newsList.style.opacity = 1;
 
-            content.style.bottom = '60px';
+        } else { 
+            content.style.position = 'fixed';
+            content.style.margin = '60px auto';
             content.style.opacity = 0;
+            newsList.style.opacity = 0;
         }
+    });
+
 });
 
-
-
-        /* Old shit */
-/*----------------------------------------------------------------*/
-/* defined via @media only screen for .welcome img 
-
-document.addEventListener('DOMContentLoaded', function() {
-    function scaleImage (toggleScreenWidth) {
-        const getMainLogo = document.getElementById('mainLogoHome')
-
-        if (toggleScreenWidth <= 400) {
-            getMainLogo.style.width = '100px';
-            getMainLogo.style.height = '100px';
-        } else if (toggleScreenWidth <= 700) {
-            getMainLogo.style.width = '150px';
-            getMainLogo.style.height = '150px';
-        } else if (toggleScreenWidth <= 1024) {
-            getMainLogo.style.width = '200px';
-            getMainLogo.style.height = '200px';
-        } else {
-            getMainLogo.style.width = '250px';
-            getMainLogo.style.height = '250px';
-        }
-    }
-
-    function updateImageSize() {
-        const screenWidth = window.innerWidth;
-        scaleImage(screenWidth);
-    }
-
-    // call / start function
-    updateImageSize();
-
-    // update Window-Width
-    window.addEventListener('resize', updateImageSize);
-
-}); */
+*/
