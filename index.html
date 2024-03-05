@@ -18,35 +18,37 @@
 
 <!-- MAIN MENU -->
 
-    <!-- Main Menu Button -->
-    <nav class="buttonMenuContainer hiddenToRight">
-    <div>
-        <img src="bild.jpg" width="30" height="30" alt="MenueSymbol" id="menuImage">
-        <button id="buttonMenu">MENU</button>
+<!-- Main Menu Button -->
+<nav class="buttonMenuContainer hiddenToRight">
+    <div class="menuButton">
+        <div class="centerButton">
+            <img src="bild.jpg" width="30" height="30" id="menuImage">
+            <button id="buttonMenu">MENU</button>
+        </div>
    </div>
-    </nav>
+   <div></div>
+</nav>
 
-    <nav class="menuContainer">
+<nav class="menuContainer">
         <div class="navListContainer">
             <!-- unsorted List Navigation Main Menu -->
             <ul>
                 <li>NAVIGATION</li>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
+                <li><a href="index.html">HOME & NEWS</a></li>
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">ON TOUR</a></li>
-                <li><a href="#">CARAVAN</a></li>
+                <li><a href="#">CARAVAN & BIKE</a></li>
+                <li><a href="#">ARCHITECTURE</a></li>
                 <li><a href="#">VEGAN FOOD</a></li>
                 <li><a href="#">CURRICULUM VITAE</a></li>
                 <li><a href="#"></a></li>
                 <li><button>CONTACT</button></li>                
             </ul>
         </div>
-     </nav>
+</nav>
 
 <!-- HEADER -->
-
-    <header class="affectedByBlurToggle"> <!-- part of toggleMenu -->
+<header class="affectedByBlurToggle"> <!-- part of toggleMenu -->
         <div class="iconBar">
             <!-- unsorted List Icon Bar -->
             <ul>
@@ -62,69 +64,59 @@
                 <li><a href=""><img src="bild.jpg" width="20" height="20" alt="" tag="Komoot"></a></li>
             </ul>
         </div>
-    </header>
-<!-- MAIN CONTENT -->
-    <main class="affectedByBlurToggle mainPage" > <!-- part of toggleMenu -->
-
-            <div class="content hiddenToRight">
-
-                <!-- Main Logo Center -->
-                <div class="welcome">
-                    <img src="/02-resources/23-images/StePat_Logo.png" id="mainLogoHome" alt="StePat-Logo" >
-                    <p>WELCOME</p>
-                </div>
-                <!-- NewsList-->
-                <div class="newsList">
-                    <p>Title List</p>
-                    <ul>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                        <li>nla</li>
-                    </ul>
-                </div>
-
-
-                <!-- ForeGround Gradient -->
-                <div class="blueGradient"></div>
-
-                <!-- Home & News Content Left -->
-                <section class="leftHomeContainer"></section>
-
-                <!-- Home & News Content Right -->
-                <section class="rightHomeContainer">
-                    <div class="av">
-                        <div class="blackGradient"></div>
-                        <img id ="mainImageRandom" src="02-resources/23-images/website_main.png">
-                    </div> <!--Background Images-->
-                </section>           
-            </div>
-    </main>
-
-<br><br><br><br><br><br><br><br><br><br><br><br>
-
-    <div class="newsListdd hiddenToRight centered"> Test
-        <ul>
-            <li>nla</li>
-            <li>nla</li>
-            <li>nla</li>
-            <li>nla</li>
-        </ul>
-    </div>
+</header>
 
 <!-- FOOTER -->
-    <footer class="affectedByBlurToggle"> <!-- part of toggleMenu -->
-        <div id="movingCamper">d</div>
-        <p>&copy; 2024 My Website. All rights reserved.</p>
-    </footer>
+<footer class="affectedByBlurToggle"> <!-- part of toggleMenu -->
+    <div id="movingCamper">d</div>
+    <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+
+<div class="scrollDownArrow"> Scroll Down </div>
+
+<!-- MAIN CONTENT -->
+<!------------------>
+
+<main class="affectedByBlurToggle" > <!-- part of toggleMenu -->
+
+<!-- CENTERED HOME CONTENT BEGIN -->
+    <section class="centerMain">
+
+        <div class="start">
+            <section class="welcome hiddenToRight">
+                <img src="/02-resources/23-images/StePat_Logo.png" id="mainLogoHome" alt="StePat-Logo" >
+                <p>WELCOME</p>
+            </section>
+
+
+            <div class="blueGradient"></div>
+
+            <!-- GRID 50-50 -->
+            <section class="welcomeContainer">
+                    <div class="leftContentHome"></div>
+                    <div class="rightContentHome">
+                        <div class="av">
+                            <div class="blackGradient"></div>
+                            <img id ="mainImageRandom" src="02-resources/23-images/website_main.png">
+                        </div>
+                    </div>    
+            </div>            
+            </section> 
+            <div class="news hiddenToRight">
+                <p>Title List</p>
+                <ul class="newsList">
+                    <li></li>
+                </ul>
+            </div>
+
+    </section>
+<!-- CENTERED HOME CONTENT END -->
+
+</main>
+
+
+</div>
+
 </body>
 
 <script defer src="02-resources/22-js/main.js"></script>
