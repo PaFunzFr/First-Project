@@ -1,12 +1,16 @@
-/*Fonts API */
+/* FONTS
+/*----------------------------*/
 
 @import url('https://fonts.googleapis.com/css2?family=Slackside+One&display=swap');
 
 
-.hiddenToRight {
-    opacity: 0;
-    transition: opacity 3s, transform 2s;
+/* GENERAL / TRANSITIONS
+/*----------------------------*/
+.hidden {
+
+    filter: blur(6px);
     transform: translateX(-100%);
+    transition: opacity 5s, filter 2s, transform 2s;
 }
 
 .hide {
@@ -15,7 +19,8 @@
 
 .show {
     opacity: 1;
-    transition: opacity 3s, transform 2s;
+    filter: none;
+    transition: opacity 3s, transform 2s filter 2s;
     transform: translateX(0);
 }
 
@@ -25,169 +30,37 @@ html {
     font-size: 16px;
 }
 
-/* FOOTER */
-/*----------------------------*/
-
-footer {
-    background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    position: fixed;
-    color: white;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-}
-
-/* MAIN MENU / NAVIDATION (left side Button) */
-/*----------------------------*/
-
-/* Styling Main Menu Button */
-.buttonMenuContainer {
-    display: flex;
-    position : fixed;
-    align-items: center;
-    left: 5%;
-    margin-left:-5pt;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 5;
-}
-
-.menuButton {
-    display: flex;
-    align-items: center;
-}
-
-.centerButton {
-    display: flex;
-    align-items: center;
-}
-
-#menuImage {
-    width: 30px;
-    height: 30px;
-}
-
-/* Styling the Button of container buttonMenuContainer */
-.menuButton button {
-    background: none;
-    color: white; 
-    padding: 3px; 
-    border: none; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transform: rotate(-90deg);
-    margin-left: -10px;
-}
-
-/* responsiveness of the button */
-@media only screen and (max-width: 568px) {
-    .buttonMenuContainer button {
-        opacity : 0;
-    }
-}
-
-/* style by hover */
-nav.buttonMenuContainer:hover {
-    cursor: pointer; 
-    scale: 1.1;
-    margin-left: -4pt;
-
-}
-
-/* Transition / Effects */
-#buttonMenu {
-    transition: opacity 0.4s ease;
-}
-
-/* Navigation Bar / Menu Site */
-.menuContainer {
-    display: flex;
-    width: 100%;
-    height: 100dvh; /*dvh neuer Befehl, der auch für mobile devices emfpohlen wird*/
-    align-items:center;
-    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%);
-    opacity: 100%;
-    color: white;
-    position: fixed;
-    z-index: 3; /* Layer-Steuerung, höher ist über niedrigerem wert */
-    top : 0%;
-    left: -100%;
-    opacity: 0;
-    transition: left 0.7s, opacity 1s ease; /* Fügen Sie eine Übergangseffekt für das Einfahren hinzu */
-    bottom: 0;
-    z-index: 4;
-}
-
-.navListContainer ul {
-    list-style-type: none;
-  }
-
-/* Title Menu */
-.navListContainer ul li:first-child {
-    font-size: 2rem;
-    color: rgba(240,173,91,1)
-}
-
-.navListContainer {
-    line-height: 2;
-    padding-left: 10%;
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-.menuContainer .navListContainer li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Styling Button CONTACT */
-.navListContainer button {
-    border-radius: 4%;
-    border-style: none;
-    padding: 10px;
-    font-size: 12pt;
-    background-color: rgba(255, 255, 255, 1);
-    font-weight: bolder;
-    margin-top: 20px;
-}
-
-/* <a> Effect Menu */
-.navListContainer ul li a:hover {
-    cursor: pointer; /* Zeige die Handcursor beim Überfahren */
-    color: rgb(230, 162, 35);
-}
-
-/* button CONTACT Effect Menue */
-.navListContainer button:hover {
-    cursor: pointer; /* Zeige die Handcursor beim Überfahren */
-    background-color: rgb(230, 162, 35);
-}
-
-/* Scroll Down Icon */
-/*----------------------------*/
-
-.scrollDownArrow {
-    display: flex;
-    position:fixed;
-    bottom: 70px;
-    left: 50%;
-    color: rgba(240,173,91,1);
-    z-index: 6;
-}
-
-/* HEADER */
+/* HEADER LAYOUT
 /*----------------------------*/
 header {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 100%);
+    background-color: black;
+    box-shadow:0 0 120px rgba(0, 0, 0, 1);
     position: fixed;
     height: 60px;
     top : 0;
     left: 0;
     right: 0;
-    z-index: 3;
+    z-index: 9;
+}
+
+
+.svg {
+    position: absolute;
+    width: 2000px; /* Festlegen der Mindestbreite auf 2000 Pixel */
+    min-width: 100%; /* Mindestbreite auf 100% setzen */
+    left: 50%; /* Element horizontal zentrieren */
+    transform: translateX(-50%); /* Element horizontal zentrieren */
+    top: 59px;
+    overflow: hidden;
+    z-index: 9;
+};
+
+
+/* HEADER CONTENT
+/*----------------------------*/
+
+.iconBar {
+    display: flex;
 }
 
 .iconBar ul {
@@ -213,6 +86,7 @@ header {
 /* Homepage Title */
 .iconBar ul li:nth-child(2) {
     font-size: 20pt;
+    font-family: 'Slackside One';
     margin-right: auto;
     margin-left: 5px;
     color: rgba(240,173,91,1);
@@ -262,118 +136,251 @@ header {
     color: rgba(240,173,91,1)
 }
 
-/* MAIN CONTENT */
+/* SCROLL DOWN INFO
+/*----------------------------*/
+
+.scrollDownArrow {
+    display: flex;
+    position:fixed;
+    bottom: 60px;
+    left: 50%;
+    color: rgba(240,173,91,1);
+    z-index: 9;
+}
+
+/* FOOTER LAYOUT */
+/*----------------------------*/
+
+footer {
+    background-color: black;
+    display: flex;
+    box-shadow:0 0 120px rgba(0, 0, 0, 1);
+    justify-content: center;
+    align-content: center;
+    position: fixed;
+    color: white;
+    height: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9;
+}
+
+footer svg {
+    position: absolute;
+    min-width:2000px;
+    bottom: 59px;
+    overflow: hidden;
+    
+};
+
+
+/* MAIN MENU BUTTON LAYOUT
+/*----------------------------*/
+
+.menuContainer {
+    position: fixed;
+    top:0;
+}
+.buttonMenuContainer {
+    display: flex;
+    position : fixed;
+    align-items: center;
+    left: 5%;
+    margin-left:-5pt;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 99;
+}
+
+.menuButton {
+    display: flex;
+    align-items: center;
+}
+
+.centerButton {
+    display: flex;
+    align-items: center;
+}
+
+#menuImage {
+    width: 30px;
+    height: 30px;
+}
+
+/* Styling the Button of container buttonMenuContainer */
+.menuButton button {
+    background: none;
+    color: white; 
+    padding: 3px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 16px; 
+    transform: rotate(-90deg);
+    margin-left: -10px;
+}
+
+/* responsiveness of the button */
+@media only screen and (max-width: 568px) {
+    .buttonMenuContainer button {
+        opacity : 0;
+    }
+}
+
+/* style by hover */
+nav.buttonMenuContainer:hover {
+    cursor: pointer; 
+    scale: 1.1;
+    margin-left: -4pt;
+
+}
+
+/* Transition / Effects */
+#buttonMenu {
+    transition: opacity 0.4s ease;
+}
+
+/* NAVIGATION POP IN LAYOUT
+/*----------------------------*/
+.menuContainer {
+    display: flex;
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 100vh; 
+    align-items:center;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%);
+    opacity: 100%;
+    color: white;
+    left: -100%;
+    transition: left 0.7s, opacity 1s ease; /* Fügen Sie eine Übergangseffekt für das Einfahren hinzu */
+    z-index: 98;
+}
+
+.navListContainer ul {
+    list-style-type: none;
+  }
+
+/* Title */
+.navListContainer ul li:first-child {
+    font-size: 2rem;
+    color: rgba(240,173,91,1);
+    font-family: 'Slackside One';
+}
+
+/* Font */
+.navListContainer {
+    line-height: 2;
+    padding-left: 10%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* neutralize url */
+.menuContainer .navListContainer li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* CONTACT Button */
+.navListContainer button {
+    border-radius: 4%;
+    border-style: none;
+    padding: 10px;
+    font-size: 12pt;
+    background-color: rgba(255, 255, 255, 1);
+    font-weight: bolder;
+    margin-top: 20px;
+}
+
+/* <a> Effect Menu */
+.navListContainer ul li a:hover {
+    cursor: pointer; /* Zeige die Handcursor beim Überfahren */
+    color: rgb(230, 162, 35);
+}
+
+/* CONTACT Button Effect */
+.navListContainer button:hover {
+    cursor: pointer; /* Zeige die Handcursor beim Überfahren */
+    background-color: rgb(230, 162, 35);
+}
+
+/* MAIN LAYOUT
 /*----------------------------*/
 
 main {
-    display: flex;
     flex-direction: column;
     z-index: 1;
+    height: calc(100vh- 140px);
+    position: fixed;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width:100%;
+    justify-content: center;
 } 
 
-
-.centerMain {
+.dropIns {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    position:relative;
-    display: flex;
-    max-width: 2000px;
-    margin: 60px auto;
-
+    flex-direction: column;
+    height: 400vh;
 }
 
+/* BACKGROUND LAYOUT
+/*----------------------------*/
+.mainBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
 
-
-.welcomeContainer {
+.grid-1fr-fr {
     display: grid;
     grid-template-columns: 1fr 1fr;
-
 } 
 
-
-.news {
-    display: flex;
-    flex-direction: column;
-    margin: 60px auto;
-    background-color: white;
-    width: 50vw;
-    z-index: 2;
-    height: 50vh;
-}
-
-.newsList {
-
-    margin-left: 0;
-    flex-direction: column;
-    list-style: none;
-
-    z-index: 2;
-}
-
-.newsList li{
-
-    margin-left: 0;
-    flex-direction: column;
-
-    z-index: 2;
-}
-
-.newsEntry {
-    background-color: red;
-}
-
-.leftContentHome {
+.leftBackground {
     display:flex;
-    width: 100%;
-    height: calc(100vh - 120px);
+    flex-grow: 1;
+    height: 100vh;
     background: linear-gradient(to right, rgba(25, 25, 25, 1) 0%, rgba(0, 0, 0, 0) 100%);
     opacity: 100%;
     z-index: -1;
-    overflow: visible;
-
 }
 
-.rightContentHome {
-
+.rightBackground {
     display: flex;
-    height: calc(100vh - 120px);
+    flex-grow: 1;
+    height: 100vh;
     opacity: 100%;
-    width: 100%;
     z-index: -1;
-    overflow: hidden; /* overflow background Image */
-
-
 }
 
-.av {
+.imagePool {
     height: 100%;
-    width: 100%;
     position: relative;
-    overflow: hidden; /* überlaufender Inhalt wird ausgeblendet */
 }
 
 /* Background Image */
 #mainImageRandom {
-    width: auto; 
+    min-width: 100%;
     height: 100%;
     position: relative;
     left: 0;
     transition: opacity 2s ease;
     object-fit: cover;
-    
 }
 
-
-
 /* Main Logo Center */
-.welcome {
+.mainLogoBackground {
     display: flex;
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
     position: absolute;
-    top:60%;
+    top:50%;
     left:50%;
     transform: translate(-50%, -60%);
     z-index: 2;
@@ -381,14 +388,17 @@ main {
 }
 
 /* Font Style Main Logo */
-.welcome p {
-    font-size: 24pt;
+.mainLogoBackground p {
+    font-size: 30pt;
+    color: white;
+    font-family: 'Slackside One';
     letter-spacing: 15pt;
-    transform: scaleY(1.6);
+    line-height: 5pt;
+    transform: scaleY(2);
     font-stretch: expanded;
 }
 
-.welcome img {
+.mainLogoBackground img {
     height: 250px;
     width: 250px;
   }
@@ -396,22 +406,22 @@ main {
 /*responsiveness Main Logo*/
 /* settings for width <= 1024px */
 @media only screen and (max-width: 1024px), (max-height: 1024px) {
-    .welcome img {
+    .mainLogoBackground img {
       height: 200px;
       width: 200px;
     }
-    .welcome p {
+    .mainLogoBackground p {
         font-size: 20pt;
         letter-spacing: 10pt;
     }
 }
 /* settings for width <= 768px */
 @media only screen and (max-width: 768px), (max-height: 768px) {    
-    .welcome img {
+    .mainLogoBackground img {
         height: 150px;
         width: 150px;
     }
-    .welcome p {
+    .mainLogoBackground p {
         font-size: 14pt;
         letter-spacing: 5pt;
     }
@@ -419,11 +429,11 @@ main {
 
 /* Settings for width <= 412px */
 @media only screen and (max-width: 412px), (max-height: 600px) {
-    .welcome img {
+    .mainLogoBackground img {
       height: 120px;
       width: 120px;
     }
-    .welcome p {
+    .mainLogoBackground p {
         font-size: 10pt;
         letter-spacing: 5pt;
     }
@@ -436,8 +446,8 @@ main {
     flex-direction: column; 
     justify-content: center; 
     position: absolute;
-    height: calc(100vh - 120px);
-    width: 90%; 
+    height: 100vh;
+    width: 100%; 
     overflow: hidden;
     background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%);
     z-index: 1;
@@ -457,11 +467,44 @@ main {
     background: linear-gradient(to left, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%); 
 }
 
+/* NEWS
+/*----------------------------*/
 
 
+.news {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 45vw;
+    z-index: 2;
+    margin-left: 5vw;
+    position: relative;
+
+}
 
 
-/* SITE CONTENT */
+.newsList {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 4% 10%;
+    height: 60%;
+    z-index: 2;
+}
+
+.newsList li{
+
+
+    flex-direction: column;
+    z-index: 2;
+}
+
+.newsEntry {
+    background-color: red;
+}
+
+
+/* ABOUT
 /*----------------------------*/
 
 .about {
@@ -488,4 +531,9 @@ body {
     background-color: rgb(0, 0, 0);
     font-family:Arial, Helvetica, sans-serif;
     margin: 0;
+}
+
+body::-webkit-scrollbar {
+   /* width: 0;
+    height: 0; */
 }
