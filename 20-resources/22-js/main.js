@@ -5,6 +5,78 @@ window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
 
+/* SCROLL EVENT HOME */
+/*----------------------------------------------------------------*/
+let isScrollingDisabled = false;
+let lastScroll = window.scrollY;
+
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(x, y);};
+}
+
+function enableScrolling(){
+    window.onscroll=function(){};
+}
+
+window.addEventListener('scroll', () => {
+    if (isScrollingDisabled) return; // Wenn das Scrollen bereits deaktiviert ist, wird die Funktion beendet
+
+    const currentScroll = window.scrollY;
+    const scrollDirection = currentScroll > lastScroll ? 'down' : 'up';
+
+
+    const windowHeight = window.innerHeight; 
+    const documentHeight = document.documentElement.scrollHeight; // document height
+    console.log(window.scrollY);
+    const maxScroll = documentHeight - windowHeight; // max scroll height
+
+    let scrollPercentage = Math.round((currentScroll / maxScroll) * 100); // percentage of scrolling
+
+    console.log('Scroll percentage:', scrollPercentage);
+
+if (scrollDirection === 'down') {
+
+    if (scrollPercentage >= 14 && scrollPercentage < 20) {
+        console.log('NEWS erreicht');
+        disableScrolling();
+        isScrollingDisabled = true; 
+        setTimeout(() => {
+            enableScrolling();
+            isScrollingDisabled = false;
+            window.scrollTo(0,maxScroll * 0.27); 
+        }, 1000 );
+    } else if (scrollPercentage >= 28 && scrollPercentage < 34) {
+        console.log('ABOUT erreicht');
+        disableScrolling();
+        isScrollingDisabled = true; 
+        setTimeout(() => {
+            enableScrolling();
+            isScrollingDisabled = false;
+            window.scrollTo(0,maxScroll * 0.41); 
+        }, 1000 );
+    } else {
+        console.log('scrolling');
+    }
+} else {
+    if (scrollPercentage >= 14 && scrollPercentage < 28) {
+        console.log('NEWS erreicht');
+        disableScrolling();
+        isScrollingDisabled = true; 
+        setTimeout(() => {
+            enableScrolling();
+            isScrollingDisabled = false;
+            window.scrollTo(0,0); 
+        }, 1000 );
+    } else {
+        console.log('scrolling');
+    }
+
+}
+lastScroll = currentScroll;
+});
+
 /* toggle Menu via MenuButton */
 /*----------------------------------------------------------------*/
 let isMenuOpen = false;
@@ -19,13 +91,13 @@ function toggleMenu() {
         // Open Menu
         menuContainer.style.left = 0;
         menuContainer.style.opacity = 1;
-        menuContainer.style.background = 'linear-gradient(to left, rgba(0, 0, 0, 0) 1%, rgba(0, 113, 138, 1) 100%)';
+        menuContainer.style.background = 'linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%)';
      
             getBlur.forEach(function(x) {        //get all from NodeList .getBlur
                 x.style.filter = 'blur(5px) saturate(0)'; //blur & saturation
                 x.style.transition = 'filter 0.9s ease'; // Blur Transition
             });
-
+            
         isMenuOpen = true;
         singleButtonMenu.style.opacity = 0;
         //console.log('Menu opened');
@@ -33,7 +105,7 @@ function toggleMenu() {
         // Close Menu
         menuContainer.style.left = '-100%';
         menuContainer.style.opacity = 0;
-        menuContainer.style.background = 'linear-gradient(to left, rgba(0, 0, 0, 0) 1%, rgba(0, 113, 138, 1) 100%)';
+        menuContainer.style.background = 'linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%)';
 
             getBlur.forEach(function(x){
                 x.style.filter = 'none';
@@ -111,6 +183,25 @@ function updateRandomImage() {
 updateRandomImage();
 setInterval(updateRandomImage, 10000); // Switch every x miliseconds
 
+/* Hide / Unhide Effects */
+/*----------------------------------------------------------------*/
+
+    const checkVisibility = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if (entry.isIntersecting && entry.target.classList.contains('hidden')) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+
+            }
+        });
+    }, {threshold: 0});
+
+    const getHiddenElementsToRight = document.querySelectorAll('.hidden');
+    getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
+
+
 /* NewsList */
 /*----------------------------------------------------------------*/
 
@@ -126,7 +217,7 @@ function buildNewsList(newsList) {
         listItemHeader.textContent = news.newsDate;
         listItemHeader.classList.add('newsDate'); // give html class
 
-        const listItemText = document.createElement('p');
+        const listItemText = document.createElement('span');
         listItemText.textContent = news.newsText;
         listItemText.classList.add('newsText'); // give html class
 
@@ -150,56 +241,3 @@ buildNewsList(newsList);
 
 
 
-/* Hide / Unhide Effects */
-/*----------------------------------------------------------------*/
-
-const checkVisibility = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        // console.log(entry);
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        } else {
-            entry.target.classList.remove('show');
-        }
-    });
-});
-
-const getHiddenElementsToRight = document.querySelectorAll('.hiddenToRight');
-getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
-
-/* SCROLL EVENT HOME */
-/*----------------------------------------------------------------*/
-/*
-window.addEventListener('scroll', () => {
-
-    console.log(window.scrollY); // Ausgabe Position Y
-    const currentScroll = window.scrollY;
-    const content = document.querySelector('.start');
-    const newsList = document.querySelector('.news');
-    const mainLogoHome = document.querySelector('.welcome');
-
-
-
-    window.addEventListener('scroll', () => {
-        console.log(window.scrollY); // Ausgabe Position Y
-        const currentScroll = window.scrollY;
-
-        if (currentScroll <= 300) {
-            console.log('kleiner 300');
-            content.style.position = 'fixed';
-            content.style.margin = '60px auto';
-            content.style.opacity = 1;
-
-            newsList.style.opacity = 1;
-
-        } else { 
-            content.style.position = 'fixed';
-            content.style.margin = '60px auto';
-            content.style.opacity = 0;
-            newsList.style.opacity = 0;
-        }
-    });
-
-});
-
-*/
