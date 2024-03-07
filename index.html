@@ -22,7 +22,7 @@
 <nav class="buttonMenuContainer hidden">
     <div class="menuButton">
         <div class="centerButton">
-            <img src="bild.jpg" width="30" height="30" id="menuImage">
+            <img src="/02-resources/23-images/static_menu.png" width="30" height="30" id="menuImage">
             <button id="buttonMenu">MENU</button>
         </div>
    </div>
@@ -59,11 +59,11 @@
                 <!-- TITLE -->
                 <li>SEITENTITEL</li>
                 <!-- Link to LinkedIn -->
-                <li><a href=""><img src="bild.jpg" width="20" height="20" alt="" tag="LinkedIn"></a></li>
+                <li><a href=""><img src="/02-resources/23-images/static_linkedin.png" width="30" height="30" alt="" tag="LinkedIn"></a></li>
                 <!-- Link to gitHub -->
-                <li><a href="https://github.com/funzlon"><img src="bild.jpg" width="20" height="20" alt="" tag="gitHub"></a></li>
+                <li><a href="https://github.com/funzlon"><img src="02-resources/23-images/static_github.png" width="30" height="30" alt="" tag="gitHub"></a></li>
                 <!-- Link to Komoot -->
-                <li><a href=""><img src="bild.jpg" width="20" height="20" alt="" tag="Komoot"></a></li>
+                <li><a href=""><img src="02-resources/23-images/static_komoot.png" width="30" height="30" alt="" tag="Komoot"></a></li>
             </ul>
         </div>
   
@@ -115,7 +115,7 @@
     <p>&copy; 2024 My Website. All rights reserved.</p>
 </footer>
 
-<div class="scrollDownArrow hidden"> Scroll Down </div>
+<div class="scrollDownArrow fadeIn affectedByBlurToggle">CONTINUE<img src="02-resources/23-images/scroll_down.png" width="30px" height="30px"> </div>
 
 <!-- MAIN CONTENT -->
 <!------------------>
@@ -123,50 +123,41 @@
 <main class="affectedByBlurToggle" > <!-- part of toggleMenu -->
 
 <!-- BACKGROUND -->
-    <section class="mainBackground">
+    <section class="mainBackground fadeIn">
 
 
-            <div class="mainLogoBackground hidden">
+            <div class="mainLogoBackground fadeIn">
                 <img src="/02-resources/23-images/StePat_Logo.png" id="mainLogoHome" alt="StePat-Logo" >
                 <p>WELCOME</p>
             </div>
 
 
-            <div class="blueGradient hidden"></div>
+            <div class="blueGradient"></div>
 
-            <!-- GRID 50-50 -->
-            <div class="grid-1fr-fr">
-                    <div class="leftBackground"></div>
-                    <div class="rightBackground">
-                        <div class="imagePool">
-                            <div class="blackGradient"></div>
-                            <img id ="mainImageRandom" src="02-resources/23-images/website_main.png">
-                        </div>
-                    </div>    
-            </div>            
-    
+            <div class="videoLoop">
+                <video autoplay muted loop plays-inline playsinline id="loopVideo">
+                    <source src="02-resources/23-images/video_totalsmall.mp4" type="video/mp4"></source>
+                </video>
+
+            </div>
     </section>
 <!-- CONTENT BOXES -->
 
 
+</main>
+<!--
 <section id="news"></section>
-  <!--      <div class="news">
+      <div class="news">
             <div>Title List<button>A</button><button>B</button></div>
             <ul class="newsList">
                 <li></li>
             </ul>
         </div>
-    -->
-
-    </section>
-
-
- 
-</main>
+  </section>
 
 <!-- CONTENT BOXES -->
 
-<section class="dropIns"></section>
+<section class="scrollHeight"></section>
 
 </body>
 
