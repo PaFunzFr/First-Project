@@ -5,6 +5,12 @@ window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
 
+window.addEventListener('load', function() {
+    var fadeIn = document.querySelectorAll('.fadeIn');
+    fadeIn.forEach(function(fadeIn) {
+        fadeIn.classList.add('loaded');
+    });
+});
 /* SCROLL EVENT HOME */
 /*----------------------------------------------------------------*/
 let isScrollingDisabled = false;
@@ -119,69 +125,6 @@ function toggleMenu() {
 }
 
 menuButton.addEventListener('click', toggleMenu);
-
-/* Background Image Randomization */
-/*----------------------------------------------------------------*/
-const backgroundImagePool = [
-    '/02-resources/23-images/website_main.png',
-    '/02-resources/23-images/website_Meran.png',
-    '/02-resources/23-images/website_hammer.png',
-    '/02-resources/23-images/website_mittenwald.png',
-    '/02-resources/23-images/website_oberstdorf2.png',
-]
-
-// nextIndex global deklarieren, damit immer verfügbar bei Austausch;
-let nextIndex = null;
-
-/* Randomizer (no equal!) */
-function getRandomImage() {
-    /* definiere random Index / Zahl (math.random), die aufgerundet wurde (Math.floor()) und mulitplizie mit Länge Array (*backgroundImagePool.length */ 
-    let randomIndex = Math.floor (Math.random() * backgroundImagePool.length);
-
-    /* wenn Index identisch zu nächstem ist */
-    if (randomIndex === nextIndex) {
-        /* vergebe nächsten Index durch erhöhen um 1 - der Modulo (% backgroundImagePool.length) verhindert,
-        dass Zahl außerhalb Array ist / setzt ihn zurück */
-        randomIndex = (randomIndex + 1) % backgroundImagePool.length;
-    } 
-        nextIndex = randomIndex;
-        return backgroundImagePool[randomIndex];
-};
-
-
-/* Transition between BackgroundImage Switch */
-/*----------------------------------------------------------------*/
-const currentBackgroundImage = document.getElementById('mainImageRandom');
-const nextBackgroundImage = document.createElement('img');
-nextBackgroundImage.style.opacity = 0;
-currentBackgroundImage.after(nextBackgroundImage);
-
-// update image and fade in (opacity) with delay (setTimeout)
-function updateRandomImage() {
-
-    const randomImageUrl = getRandomImage();
-    nextBackgroundImage.src = randomImageUrl;
-
-    nextBackgroundImage.style.opacity = 1;
-    nextBackgroundImage.style.height = '100%';
-
-
-        setTimeout(() => {
-            currentBackgroundImage.style.opacity = 0;
-            currentBackgroundImage.style.height = '100%';
-
-            // update Image after Delay
-            setTimeout(() => {
-                currentBackgroundImage.src = randomImageUrl;
-                currentBackgroundImage.style.opacity = 1;
-                currentBackgroundImage.style.height = '100%';
-
-            }, 2000); // Transition Time
-        }, 7000); // Delay before next Image
-}
-
-updateRandomImage();
-setInterval(updateRandomImage, 10000); // Switch every x miliseconds
 
 /* Hide / Unhide Effects */
 /*----------------------------------------------------------------*/
