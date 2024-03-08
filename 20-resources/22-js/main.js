@@ -1,6 +1,5 @@
 /* Scroll back to 0 when refreshing */
 /*----------------------------------------------------------------*/
-
 window.addEventListener('beforeunload', function() {
     window.scrollTo(0, 0);
 });
@@ -11,6 +10,15 @@ window.addEventListener('load', function() {
         fadeIn.classList.add('loaded');
     });
 });
+
+/* HOVER ICONS
+/*----------------------------------------------------------------*/
+function changeImage(imgId,newSrc) {
+    document.getElementById(imgId).src = newSrc;
+    document.getElementById(imgId).src = newSrc;
+    document.getElementById(imgId).src = newSrc;
+};
+
 /* SCROLL EVENT HOME */
 /*----------------------------------------------------------------*/
 let isScrollingDisabled = false;
