@@ -51,21 +51,18 @@
 <header class="affectedByBlurToggle"> <!-- part of toggleMenu -->
 
     
-        <div class="iconBar">
-            <!-- unsorted List Icon Bar -->
-            <ul>
-                <!-- Header Logo -->
-                <li><a href="index.html"><img src="/02-resources/23-images/logo_iconBar.png" alt="" Class="logoTop" tag="LogoSmall"></a></li>
-                <!-- TITLE -->
-                <li>SEITENTITEL</li>
-                <!-- Link to LinkedIn -->
-                <li><a href=""><img src="/02-resources/23-images/static_linkedin.png" width="30" height="30" alt="" tag="LinkedIn"></a></li>
-                <!-- Link to gitHub -->
-                <li><a href="https://github.com/funzlon"><img src="02-resources/23-images/static_github.png" width="30" height="30" alt="" tag="gitHub"></a></li>
-                <!-- Link to Komoot -->
-                <li><a href=""><img src="02-resources/23-images/static_komoot.png" width="30" height="30" alt="" tag="Komoot"></a></li>
-            </ul>
-        </div>
+    <div class="iconBar">
+        <ul>
+            <li><a href="index.html"><img src="/02-resources/23-images/logo_iconBar.png" alt="" Class="logoTop" tag="LogoSmall"></a></li>
+            <li><p>SEITENTITEL</p></li>
+            <li><a href="#" onmouseover="changeImage('linkedin-img', '02-resources/23-images/hover_linkedin.png')" onmouseout="changeImage('linkedin-img', '02-resources/23-images/static_linkedin.png')">
+                <img id="linkedin-img" src="02-resources/23-images/static_linkedin.png" alt="LinkedIn"></a></li>
+            <li><a href="https://github.com/funzlon" onmouseover="changeImage('github-img', '02-resources/23-images/hover_github.png')" onmouseout="changeImage('github-img', '02-resources/23-images/static_github.png')">
+                <img id="github-img" src="02-resources/23-images/static_github.png" alt="GitHub"></a></li>
+            <li><a href="#" onmouseover="changeImage('komoot-img', '02-resources/23-images/hover_komoot.png')" onmouseout="changeImage('komoot-img', '02-resources/23-images/static_komoot.png')">
+                <img id="komoot-img" src="02-resources/23-images/static_komoot.png" alt="Komoot"></a></li>
+        </ul>
+    </div>
   
 
 <div class="svg">
@@ -136,7 +133,7 @@
 
             <div class="videoLoop">
                 <video autoplay muted loop plays-inline playsinline id="loopVideo">
-                    <source src="02-resources/23-images/video_totalsmall.mp4" type="video/mp4"></source>
+                    <source src="02-resources/23-images/background_final.mp4" type="video/mp4"></source>
                 </video>
 
             </div>
