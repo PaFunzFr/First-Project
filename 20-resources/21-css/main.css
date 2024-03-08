@@ -94,7 +94,7 @@ header {
 /* Homepage Title */
 .iconBar ul li:nth-child(2) {
     font-size: 20pt;
-    font-family: 'Slackside One';
+    
     margin-right: auto;
     margin-left: 5px;
     color: rgba(240,173,91,1);
@@ -139,10 +139,7 @@ header {
     text-decoration: none;
 }
 
-/* Effect Hyperlink */
-.iconBar ul li a:hover {
-    color: rgba(240,173,91,1)
-}
+
 
 /* SCROLL DOWN INFO
 /*----------------------------*/
@@ -415,10 +412,11 @@ main {
 .mainLogoBackground p {
     text-align: center;
     font-size: 30pt;
+    letter-spacing: 15pt;
     color: white;
     font-family: 'Slackside One';
-    letter-spacing: 15pt;
     line-height: 5pt;
+    margin-left: 5%;
     transform: scaleY(2);
     font-stretch: expanded;
 }
@@ -436,9 +434,9 @@ main {
       width: 200px;
     }
     .mainLogoBackground p {
-        text-align: center;
         font-size: 20pt;
         letter-spacing: 10pt;
+        
     }
 }
 /* settings for width <= 768px */
@@ -448,7 +446,6 @@ main {
         width: 150px;
     }
     .mainLogoBackground p {
-        text-align: center;
         font-size: 14pt;
         letter-spacing: 5pt;
     }
