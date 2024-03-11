@@ -6,7 +6,7 @@ window.addEventListener('beforeunload', function() {
 
 window.addEventListener('load', function() {
     var fadeIn = document.querySelectorAll('.fadeIn');
-    fadeIn.forEach(function(fadeIn) {
+    fadeIn.forEach(function (fadeIn) {
         fadeIn.classList.add('loaded');
     });
 });
@@ -19,77 +19,6 @@ function changeImage(imgId,newSrc) {
     document.getElementById(imgId).src = newSrc;
 };
 
-/* SCROLL EVENT HOME */
-/*----------------------------------------------------------------*/
-let isScrollingDisabled = false;
-let lastScroll = window.scrollY;
-
-function disableScrolling(){
-    var x=window.scrollX;
-    var y=window.scrollY;
-    window.onscroll=function(){window.scrollTo(x, y);};
-}
-
-function enableScrolling(){
-    window.onscroll=function(){};
-}
-
-window.addEventListener('scroll', () => {
-    if (isScrollingDisabled) return; // Wenn das Scrollen bereits deaktiviert ist, wird die Funktion beendet
-
-    const currentScroll = window.scrollY;
-    const scrollDirection = currentScroll > lastScroll ? 'down' : 'up';
-
-
-    const windowHeight = window.innerHeight; 
-    const documentHeight = document.documentElement.scrollHeight; // document height
-    console.log(window.scrollY);
-    const maxScroll = documentHeight - windowHeight; // max scroll height
-
-    let scrollPercentage = Math.round((currentScroll / maxScroll) * 100); // percentage of scrolling
-
-    console.log('Scroll percentage:', scrollPercentage);
-
-if (scrollDirection === 'down') {
-
-    if (scrollPercentage >= 14 && scrollPercentage < 20) {
-        console.log('NEWS erreicht');
-        disableScrolling();
-        isScrollingDisabled = true; 
-        setTimeout(() => {
-            enableScrolling();
-            isScrollingDisabled = false;
-            window.scrollTo(0,maxScroll * 0.27); 
-        }, 1000 );
-    } else if (scrollPercentage >= 28 && scrollPercentage < 34) {
-        console.log('ABOUT erreicht');
-        disableScrolling();
-        isScrollingDisabled = true; 
-        setTimeout(() => {
-            enableScrolling();
-            isScrollingDisabled = false;
-            window.scrollTo(0,maxScroll * 0.41); 
-        }, 1000 );
-    } else {
-        console.log('scrolling');
-    }
-} else {
-    if (scrollPercentage >= 14 && scrollPercentage < 28) {
-        console.log('NEWS erreicht');
-        disableScrolling();
-        isScrollingDisabled = true; 
-        setTimeout(() => {
-            enableScrolling();
-            isScrollingDisabled = false;
-            window.scrollTo(0,0); 
-        }, 1000 );
-    } else {
-        console.log('scrolling');
-    }
-
-}
-lastScroll = currentScroll;
-});
 
 /* toggle Menu via MenuButton */
 /*----------------------------------------------------------------*/
@@ -137,58 +66,90 @@ menuButton.addEventListener('click', toggleMenu);
 /* Hide / Unhide Effects */
 /*----------------------------------------------------------------*/
 
-    const checkVisibility = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            console.log(entry);
+const checkVisibility = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+
             if (entry.isIntersecting && entry.target.classList.contains('hidden')) {
                 entry.target.classList.add('show');
             } else {
                 entry.target.classList.remove('show');
-
             }
         });
-    }, {threshold: 0});
+    },
 
-    const getHiddenElementsToRight = document.querySelectorAll('.hidden');
-    getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
+    {threshold: 0}
+);
+
+const getHiddenElementsToRight = document.querySelectorAll('.hidden');
+getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
 
 
-/* NewsList */
+/* SCROLL EVENT HOME */
 /*----------------------------------------------------------------*/
+const contentLogoBackground = document.querySelector('.mainLogoBackground');
+const contentVideoLoop = document.querySelector('.videoLoop');
+const scrollDownSymbol = document.querySelector('.scrollDownArrow');
 
-function buildNewsList(newsList) {
-    const getNewsListContainer = document.querySelector('.newsList');
-    getNewsListContainer.innerHTML = '';
+let lastScroll = window.scrollY;
 
-    newsList.forEach(function (news) {
-        const listItem = document.createElement('li');
-        listItem.classList.add('newsEntry'); // give html class
+const windowHeight = window.innerHeight; 
+const documentHeight = document.documentElement.scrollHeight; // document height
+const maxScroll = documentHeight - windowHeight; // max scroll height
 
-        const listItemHeader = document.createElement('p');
-        listItemHeader.textContent = news.newsDate;
-        listItemHeader.classList.add('newsDate'); // give html class
 
-        const listItemText = document.createElement('span');
-        listItemText.textContent = news.newsText;
-        listItemText.classList.add('newsText'); // give html class
+window.addEventListener('scroll', () => {
+   
+    const currentScroll = window.scrollY;
+    const scrollDirection = currentScroll > lastScroll ? 'down' : 'up';
 
-        listItem.appendChild(listItemHeader);
-        listItem.appendChild(listItemText);
+    let scrollPercentage = Math.round((currentScroll / maxScroll) * 100); // percentage of scrolling
 
-        getNewsListContainer.appendChild(listItem);
-    });
+    console.log(window.scrollY);
+    console.log('Scroll percentage:', scrollPercentage);
+
+if (scrollDirection === 'down') {
+
+    if (scrollPercentage >= 3 && scrollPercentage <= 95) {
+        // Content Start
+        contentLogoBackground.style.opacity = '0';
+        contentVideoLoop.style.opacity = '0.1';
+        scrollDownSymbol.style.opacity = '1';
+
+    } else if (scrollPercentage > 95 && scrollPercentage <=100) {
+        // Content End
+        contentLogoBackground.style.opacity = '0';
+        contentVideoLoop.style.opacity = '0.1';
+        scrollDownSymbol.style.opacity = '0';
+
+    } else {
+        // Content Else
+        contentLogoBackground.style.opacity = '1';
+        contentVideoLoop.style.opacity = '1';
+        scrollDownSymbol.style.opacity = '1';
+    }
+
+} else {
+
+    if (scrollPercentage >= 3 && scrollPercentage <= 95) {
+        // Content Start
+        contentLogoBackground.style.opacity = '0';
+        contentVideoLoop.style.opacity = '0.1';
+        scrollDownSymbol.style.opacity = '1';
+
+    } else if (scrollPercentage > 95 && scrollPercentage <=100) {
+        // Content End
+        contentLogoBackground.style.opacity = '0';
+        contentVideoLoop.style.opacity = '0.1';
+        scrollDownSymbol.style.opacity = '0';
+
+    } else {
+        // Content Else
+        contentLogoBackground.style.opacity = '1';
+        contentVideoLoop.style.opacity = '1';
+        scrollDownSymbol.style.opacity = '1';
+    }
 }
 
-const newsList = [
-    {newsDate: '02/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
-    {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
-    {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
-    {newsDate: '03/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
-    {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'},
-    {newsDate: '04/2024', newsText:'Hallo ich schreibe einen tollen text, der in den Newsfeed geht'}
-];
+lastScroll = currentScroll;
 
-buildNewsList(newsList);
-
-
-
+});
