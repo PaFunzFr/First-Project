@@ -3,6 +3,62 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Slackside+One&display=swap');
 
+/* BODY / GENERAL */
+/*----------------------------*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+}
+
+body::-webkit-scrollbar {
+   /* width: 0;
+    height: 0; */
+}
+
+section {
+    height: calc(100vh - 14vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.homePlaceholder {
+    margin-top: 7vh;
+    opacity: 0;
+}
+
+.news {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.about {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.onTour {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.bike {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.architecture {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.vegan {
+    margin-bottom: 7vh;
+}
+
+            
 /* GENERAL / TRANSITIONS
 /*----------------------------*/
 /* Background */
@@ -19,15 +75,12 @@
 
 /* on load / scroll */
 .hidden {
-
     filter: blur(6px);
-    transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-20%);
     transition: opacity 5s, filter 2s, transform 2s;
 }
 
-.hide {
-    transform: translateX(-100%);
-}
 
 .show {
     opacity: 1;
@@ -45,9 +98,9 @@ html {
 /*----------------------------*/
 header {
     background-color: black;
-    box-shadow:0 0 120px rgba(0, 0, 0, 1);
+    box-shadow:0 0 14vh rgba(0, 0, 0, 1);
     position: fixed;
-    height: 60px;
+    height: 7vh;
     top : 0;
     left: 0;
     right: 0;
@@ -60,7 +113,7 @@ header {
     min-width: 100%;
     left: 50%; 
     transform: translateX(-50%); 
-    top: 59px;
+    top: calc(7vh - 1px);
     overflow: hidden;
     z-index: 9;
 };
@@ -77,7 +130,7 @@ header {
     padding: 0;
     display: flex;
     align-items: center;
-    height:60px;
+    height:7vh;
 }
 
 /* Main Icon / Logo */
@@ -94,7 +147,6 @@ header {
 /* Homepage Title */
 .iconBar ul li:nth-child(2) {
     font-size: 20pt;
-    
     margin-right: auto;
     margin-left: 5px;
     color: rgba(240,173,91,1);
@@ -143,7 +195,6 @@ header {
 
 /* SCROLL DOWN INFO
 /*----------------------------*/
-
 .scrollDownArrow {
     display: flex;
     flex-direction: column;
@@ -152,12 +203,12 @@ header {
     justify-content: center;
     font-size: 12px;
     text-shadow: black;
-    bottom: 90px;
     left: 50%;
     transform: translateX(-50%);
     color: rgba(240,173,91,1);
     z-index: 9;
     animation: bounceAnimation 1s infinite alternate;
+    transition: opacity 1s ease;
 }
 
 .scrollDownArrow img {
@@ -166,10 +217,10 @@ margin-top: 5px;
 
 @keyframes bounceAnimation {
     0% {
-        bottom: 90px;
+        bottom: calc(7vh + 30px);;
     }
     100% {
-        bottom: 93px;; /* Höhe des Sprungs */
+        bottom: calc(7vh + 35px); /* Höhe des Sprungs */
     }
 }
 
@@ -179,12 +230,12 @@ margin-top: 5px;
 footer {
     background-color: black;
     display: flex;
-    box-shadow:0 0 120px rgba(0, 0, 0, 1);
+    box-shadow:0 0 14vh rgba(0, 0, 0, 1);
     justify-content: center;
     align-content: center;
     position: fixed;
     color: white;
-    height: 60px;
+    height: 7vh;
     font-size: 12px;
     left: 0;
     right: 0;
@@ -198,7 +249,7 @@ footer svg {
     min-width: 100%; 
     left: 50%; 
     transform: translateX(-50%); 
-    bottom: 59px;
+    bottom: calc(7vh - 1px);
     overflow: hidden;
     z-index: 9;
     
@@ -272,16 +323,15 @@ nav.buttonMenuContainer:hover {
 .menuContainer {
     display: flex;
     position: fixed;
-    top:0;
     width: 100%;
+    top: 0;
     align-items:center;
     background: linear-gradient(to left, rgba(0, 0, 0, 0) 0%, rgba(0, 113, 138, 1) 100%);
-    opacity: 100%;
     color: white;
     left: -100%;
-    transition: left 0.7s, opacity 1s ease; /* Fügen Sie eine Übergangseffekt für das Einfahren hinzu */
+    transition: left 0.7s, opacity 1s ease;
     z-index: 98;
-    height: 100%;
+    height: 100vh;
 }
 
 .navListContainer ul {
@@ -331,29 +381,6 @@ nav.buttonMenuContainer:hover {
     background-color: rgb(230, 162, 35);
 }
 
-/* MAIN LAYOUT
-/*----------------------------*/
-/* transisitions */
-main {
-    flex-direction: column;
-    z-index: 1;
-    height: calc(100vh- 140px);
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width:100%;
-    justify-content: center;
-} 
-
-/* CONTENT AREA */
-/*----------------------------*/
-.scrollHeight {
-    display: flex;
-    flex-direction: column;
-    height: 400vh;
-}
-
 /* BACKGROUND LAYOUT
 /*----------------------------*/
 .mainBackground {
@@ -362,12 +389,14 @@ main {
     align-items: center;
     position: fixed;
     width: 100%;
-    top: 0;
+    height: 100vh;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
 }
 
 .blueGradient {
     display: flex;
-    position: absolute;
     height: 100vh;
     width: 100%; 
     overflow: hidden;
@@ -379,11 +408,12 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 0;
     filter: blur(4px);
+    transition: opacity 2s ease;
 }
 
 .videoLoop video { 
@@ -400,12 +430,12 @@ main {
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    position: absolute;
+    position: fixed;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-    transition: opacity 3s;
+    transition: opacity 2s;
 }
 
 /* Font Style Main Logo */
@@ -419,6 +449,7 @@ main {
     margin-left: 5%;
     transform: scaleY(2);
     font-stretch: expanded;
+    padding-top: 20px;
 }
 
 .mainLogoBackground img {
@@ -454,8 +485,8 @@ main {
 /* Settings for width <= 412px */
 @media only screen and (max-width: 412px), (max-height: 600px) {
     .mainLogoBackground img {
-      height: 120px;
-      width: 120px;
+      height: 14vh;
+      width: 14vh;
     }
     .mainLogoBackground p {
         font-size: 10pt;
@@ -463,73 +494,7 @@ main {
     }
   }
 
-/* NEWS
-/*----------------------------*/
-.news {
-    display: flex;
-    flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.1);
-    top: 50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    width: 50%;
-    max-width: 800px;
-    min-width: 300px;
-    height:80%;
-    z-index: 2;
-    position: fixed;
-    border-radius: 20px;
-    overflow: hidden;
-}
-
-.newsList {
-    display: flex;
-    flex-direction: column;
-    list-style: none;
-    padding: 5%;
-    z-index: 2;
-}
-
-.newsList li{
-    border-radius: 10px;
-    margin-top: 20px;
-    flex-direction: column;
-    z-index: 2;
-}
-
-.newsEntry {
-    padding: 4px;
-    background-color: red;
-    max-width: auto;
-}
-
-/* ABOUT
-/*----------------------------*/
-.about {
-    display: relative;
-    background-color: rgb(40, 18, 18);
-    width: 100%;
-    height : 100%;
-    margin-top:60px;
-    margin-bottom: 60px;
-    width: 100%;
-    height: calc(100vh - 120px);
-};
-
  .affectedByBlurToggle {
     filter: none;
 }
 
-/* BODY / GENERAL */
-/*----------------------------*/
-body {
-    background-color: rgb(0, 0, 0);
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 0;
-    min-width: 320px;
-}
-
-body::-webkit-scrollbar {
-   /* width: 0;
-    height: 0; */
-}
