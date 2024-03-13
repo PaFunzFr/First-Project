@@ -65,91 +65,47 @@ menuButton.addEventListener('click', toggleMenu);
 
 /* Hide / Unhide Effects */
 /*----------------------------------------------------------------*/
-
-const checkVisibility = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-
-            if (entry.isIntersecting && entry.target.classList.contains('hidden')) {
-                entry.target.classList.add('show');
-            } else {
-                entry.target.classList.remove('show');
-            }
-        });
-    },
-
-    {threshold: 0}
-);
-
-const getHiddenElementsToRight = document.querySelectorAll('.hidden');
-getHiddenElementsToRight.forEach((el) => checkVisibility.observe(el));
-
-
-/* SCROLL EVENT HOME */
-/*----------------------------------------------------------------*/
 const contentLogoBackground = document.querySelector('.mainLogoBackground');
 const contentVideoLoop = document.querySelector('.videoLoop');
 const scrollDownSymbol = document.querySelector('.scrollDownArrow');
 
-let lastScroll = window.scrollY;
+let previousEntry = null;
 
-const windowHeight = window.innerHeight; 
-const documentHeight = document.documentElement.scrollHeight; // document height
-const maxScroll = documentHeight - windowHeight; // max scroll height
+const checkVisibility = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            if (previousEntry !== null && previousEntry.target.classList.contains('show')) {
+                previousEntry.target.classList.remove('show'); // Klasse 'show' vom vorherigen Eintrag entfernen
+            }
+
+                if (entry.isIntersecting && entry.target.classList.contains('homePlaceholder')) {
+                    entry.target.classList.add('show');
+                    contentLogoBackground.style.opacity = '1';
+                    contentVideoLoop.style.opacity = '1';
+                    scrollDownSymbol.style.opacity = '1';
+                    console.log('Home');
+
+                } else if (entry.isIntersecting && !entry.target.classList.contains('homePlaceholder') && !entry.target.classList.contains('vegan')) {
+                    entry.target.classList.add('show');
+                    contentLogoBackground.style.opacity = '0';
+                    contentVideoLoop.style.opacity = '0.1';
+                    scrollDownSymbol.style.opacity = '1';        
+                    console.log('BBB');
+                    
+                } else if (entry.isIntersecting && entry.target.classList.contains('vegan')) {
+                    entry.target.classList.add('show');
+                    contentLogoBackground.style.opacity = '0';
+                    contentVideoLoop.style.opacity = '0.1';
+                    scrollDownSymbol.style.opacity = '0';        
+                    console.log('CCC');
+                } 
+            previousEntry = entry;
+        }
+    });
+}, {threshold: 0.3});
+
+const getElements = document.querySelectorAll('main section');
+getElements.forEach((el) => checkVisibility.observe(el));
 
 
-window.addEventListener('scroll', () => {
-   
-    const currentScroll = window.scrollY;
-    const scrollDirection = currentScroll > lastScroll ? 'down' : 'up';
 
-    let scrollPercentage = Math.round((currentScroll / maxScroll) * 100); // percentage of scrolling
-
-    console.log(window.scrollY);
-    console.log('Scroll percentage:', scrollPercentage);
-
-if (scrollDirection === 'down') {
-
-    if (scrollPercentage >= 3 && scrollPercentage <= 95) {
-        // Content Start
-        contentLogoBackground.style.opacity = '0';
-        contentVideoLoop.style.opacity = '0.1';
-        scrollDownSymbol.style.opacity = '1';
-
-    } else if (scrollPercentage > 95 && scrollPercentage <=100) {
-        // Content End
-        contentLogoBackground.style.opacity = '0';
-        contentVideoLoop.style.opacity = '0.1';
-        scrollDownSymbol.style.opacity = '0';
-
-    } else {
-        // Content Else
-        contentLogoBackground.style.opacity = '1';
-        contentVideoLoop.style.opacity = '1';
-        scrollDownSymbol.style.opacity = '1';
-    }
-
-} else {
-
-    if (scrollPercentage >= 3 && scrollPercentage <= 95) {
-        // Content Start
-        contentLogoBackground.style.opacity = '0';
-        contentVideoLoop.style.opacity = '0.1';
-        scrollDownSymbol.style.opacity = '1';
-
-    } else if (scrollPercentage > 95 && scrollPercentage <=100) {
-        // Content End
-        contentLogoBackground.style.opacity = '0';
-        contentVideoLoop.style.opacity = '0.1';
-        scrollDownSymbol.style.opacity = '0';
-
-    } else {
-        // Content Else
-        contentLogoBackground.style.opacity = '1';
-        contentVideoLoop.style.opacity = '1';
-        scrollDownSymbol.style.opacity = '1';
-    }
-}
-
-lastScroll = currentScroll;
-
-});
