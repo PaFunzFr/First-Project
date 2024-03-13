@@ -19,7 +19,7 @@
 <!-- MAIN MENU -->
 
 <!-- Main Menu Button -->
-<nav class="buttonMenuContainer hidden">
+<nav class="buttonMenuContainer fadeIn">
     <div class="menuButton">
         <div class="centerButton">
             <img src="/02-resources/23-images/static_menu.png" width="30" height="30" id="menuImage">
@@ -110,28 +110,58 @@
 
 </footer>
 
-<div class="scrollDownArrow fadeIn affectedByBlurToggle">CONTINUE<img src="02-resources/23-images/scroll_down.png" width="30px" height="30px"> </div>
+<div class="scrollDownArrow fadeIn affectedByBlurToggle"><img src="02-resources/23-images/scroll_down.png" width="30px" height="30px"> </div>
 
 <!-- MAIN CONTENT -->
 <main> 
-
     <section class="homePlaceholder affectedByBlurToggle">
         <div></div>
     </section>
 
     <section class="news affectedByBlurToggle hidden">
-        <div class="news">
-            <p>NEWS</p>
-            <p class="currentNews"></p>
-        </div>
+            <div class="currentNews">
+                <p class="sectionTitle">NEWS</p>
+                <ul>
+                    <li><p>März 2024</p>
+                        Lorem ipsum dolor sit amet consectetur, 
+                        adipisicing elit. Explicabo id odio consequuntur sequi accusamus, 
+                        distinctiente fuga, obcaecati sit.
+                    </li>
+                    <li><p>Januar 2024</p>
+                        Lorem ipsum dolor sit amet consectetur, 
+                        adipisicing elit. Explicabo id odio consequuntur sequi accusamus, 
+                        distinctio iusto ea! Volga, obcaecati sit.
+                    </li>
+                    <li><p>Dezember 2023</p>
+                        Lorem ipsum dolonte fuga, obcaecati sit.
+                    </li>
+                    <li><p>November 2023</p>
+                        Lorem ipsum dolor sit amet consectetur, 
+                        adipisicing elit. Explicabo id odio consequuntur sequi accusamus, 
+                        distinctio iusto ea! Voluptas nisi placeat  nihil, alias sapiente fuga, obcaecati sit.
+                    </li>           
+                </ul>
+            </div>
     </section>
 
     <section class="about affectedByBlurToggle hidden">
-        <div>ABOUT</div>
+        <div class="aboutContainer">
+            <p class="sectionTitle">ABOUT</p>
+                <div class="contentAbout">
+                    <img src="/02-resources/23-images/website_hammer.png">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reprehenderit, 
+                        ab quo aut similique ipsam qui error, corrupti mollitia totam doloribus officia, 
+                        sequi reiciendis placeat pariatur nihil magni unde atque deleniti!</p>
+                </div>
+        </div>
     </section>
 
     <section class="onTour affectedByBlurToggle hidden">
-        <div>ON TOUR</div>
+        <div class="onTourContainer">
+            <div class="tourSideBar">
+                
+            </div>
+        </div>
     </section>
 
     <section class="bike affectedByBlurToggle hidden">
@@ -160,7 +190,7 @@
 
     <div class="videoLoop">
         <video autoplay muted loop plays-inline playsinline id="loopVideo">
-            <source src="02-resources/23-images/background_final.mp4" type="video/mp4"></source>
+            <source src="02-resources/23-images/final_final_smaller.mp4" type="video/mp4"></source>
         </video>
     </div>
 
