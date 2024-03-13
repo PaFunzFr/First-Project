@@ -9,59 +9,31 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+main::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+::-webkit-scrollbar {
+    background: transparent;
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 body {
     background-color: black;
+    overflow: overlay;
 }
-
-body::-webkit-scrollbar {
-   /* width: 0;
-    height: 0; */
-}
-
-section {
-    height: calc(100vh - 14vh);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 2;
-}
-
-.homePlaceholder {
-    margin-top: 7vh;
-    opacity: 0;
-}
-
-.news {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.about {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.onTour {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.bike {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.architecture {
-    background-color: rgba(0, 0, 0, 0);
-}
-
-.vegan {
-    margin-bottom: 7vh;
-}
-
-            
-/* GENERAL / TRANSITIONS
-/*----------------------------*/
-/* Background */
 .fadeIn {
     display: flex;
     flex-direction: column;
@@ -77,17 +49,205 @@ section {
 .hidden {
     filter: blur(6px);
     opacity: 0;
-    transform: translateX(-20%);
-    transition: opacity 5s, filter 2s, transform 2s;
+    transition: opacity 2s ease;
 }
-
 
 .show {
     opacity: 1;
     filter: none;
-    transition: opacity 3s, transform 2s filter 2s;
-    transform: translateX(0);
+    transition: opacity 2s ease;
 }
+
+/* MAIN */
+/*----------------------------*/
+main {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: calc(100vh - 14vh);
+    margin-top: 7vh;
+}
+
+section {
+    height: calc(100vh - 14vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    scroll-snap-align: start;
+}
+
+.sectionTitle {
+    display: flex;
+    color: orange;
+    font-size: 30pt;
+    margin-bottom: 10px;
+    font-family: 'Slackside One';
+}
+
+.homePlaceholder {
+    margin-top: 7vh;
+    opacity: 0;
+}
+
+/* MAIN */
+/*----------------------------*/
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.currentNews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-content: center;
+    width: 65vw;
+    height: 65vh;
+    max-width: 1200px;
+}
+
+.currentNews ul {
+    scroll-snap-type: y mandatory;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    list-style-type: none;
+    height: auto; 
+    border-radius: 5px;
+}
+
+.currentNews ul li p {
+    font-weight: bold;
+    color: orange;
+    margin-bottom: 4px;
+    font-size: 18pt;
+}
+
+.currentNews ul li{
+    color: white;
+    scroll-snap-align: start;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: rgba(0, 0,0, 0.1);
+    border-radius: 5px;
+    min-width:100%;
+    border-bottom: 1pt solid rgba(0, 0, 0, 0.2);
+    font-size: 14pt;
+}
+.currentNews ul li:first-child {
+    margin-top: 0;
+}
+.currentNews ul li:last-child {
+    margin-bottom: 0;
+}
+
+/* ABOUT */
+/*----------------------------*/
+.about {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.aboutContainer {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 65vw;
+    height: 65vh;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 1200px;
+}
+
+.contentAbout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    height: 55vh;
+    overflow: hidden;
+}
+
+.contentAbout p {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 15%;
+    border-radius: 5px;
+    font-size: 20pt;
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
+    border-right: 2pt solid rgba(0, 0, 0, 0.2);
+}
+.contentAbout img {
+    width: 100%;
+    max-width: 100vw;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
+    border-right: 2pt solid rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1000px) {   
+    .contentAbout {
+        grid-template-columns: 1fr;
+        grid-template-rows: 49% 49%;
+        grid-row-gap: 2%;
+        height: 65vh;
+        overflow: hidden;
+    }
+    .contentAbout p {
+        font-size: 16pt;
+        border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
+        border-right: 2pt solid rgba(0, 0, 0, 0.2);
+    }
+    .contentAbout img {
+        object-fit: cover;
+        width: 100%;
+        max-width: 100vw;
+        height: 100%;
+    }
+}
+
+/* ON TOUR */
+/*----------------------------*/
+.onTour {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.onTourContainer {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    width: 100%;
+    height: 35vh;
+    top: 0;
+    background-color: white;
+}
+
+.bike {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.architecture {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.vegan {
+    margin-bottom: 7vh;
+}
+     
+/* GENERAL / TRANSITIONS
+/*----------------------------*/
+/* Background */
 
 /* HTML ROOT Element */
 html {
@@ -265,7 +425,7 @@ footer svg {
     display: flex;
     position : fixed;
     align-items: center;
-    left: 5%;
+    left: 4vw;
     margin-left:-5pt;
     top: 50%;
     transform: translateY(-50%);
@@ -301,7 +461,7 @@ footer svg {
 
 /* responsiveness of the button */
 @media only screen and (max-width: 568px) {
-    .buttonMenuContainer button {
+    #buttonMenu {
         opacity : 0;
     }
 }
