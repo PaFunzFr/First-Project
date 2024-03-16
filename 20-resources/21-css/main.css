@@ -301,8 +301,8 @@ section {
     top: 0;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-
 }
+
 .tourMainPicture img {
     right:0;
     min-width: 100vw;
@@ -312,41 +312,36 @@ section {
     scroll-behavior: smooth;
 }
 
-
-.tourDates {
-    display: flex;
-    flex-grow: 1; 
+.tourDates iframe {
     position: absolute;
     width: 50vw;
-    height: 50%;
-    right: 0;
-    bottom: 0;
-}
-
-.tourDates iframe {
-    width: 50vw;
-    max-height: 44vh;
-    height: auto;
-    border-radius: 20px;
-    margin-right: 2vw;
-    margin-left: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 50vh;
+    min-width: 800px;
+    height: 30vh;
+    border-radius: 0 0 20px 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
 }
 
 .tourPictures {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    grid-gap: 5px;
     grid-auto-flow: dense;
     position: absolute;
-    width: 46vw;
-    top: 46vh;
-    left:0;
-    bottom: 3vh;
-    overflow: scroll;
-    margin-left: 2vw;
-    margin-right: 2vw;
-    background-color: rgba(0, 0, 0, 0.2)
+    width: 50vw;
+    min-width: 800px;
+    height: 15vh;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 43vh;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 .imgPattern {
@@ -359,8 +354,6 @@ section {
 .imgPattern:hover {
     opacity: 1;
 }
-
-
 
 /* BIKE */
 /*----------------------------*/
