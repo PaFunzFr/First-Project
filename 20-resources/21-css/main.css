@@ -17,7 +17,7 @@ main::-webkit-scrollbar {
     height: 0;
 }
 
-.tourMainPicture::-webkit-scrollbar {
+.tourContainer::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
@@ -84,10 +84,18 @@ section {
 
 .sectionTitle {
     display: flex;
+    position: absolute;
     color: orange;
     font-size: 30pt;
-    margin-bottom: 10px;
+    top: calc(15vh - 50px);
     font-family: 'Slackside One';
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .sectionTitle {
+        left: 15vw;
+    }
 }
 
 .homePlaceholder {
@@ -109,9 +117,12 @@ section {
     justify-content: center;
     position: absolute;
     align-content: center;
-    width: 70vw;
-    height: 75vh;
-    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    height: 60vh;
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
+    border-top: 2pt solid rgba(240,173,91,0.2);
+
 }
 
 .currentNews ul {
@@ -124,6 +135,12 @@ section {
     list-style-type: none;
     height: auto; 
     border-radius: 5px;
+    width: 70vw;
+    max-width: 700px;
+    margin-left: 50%;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    transform: translateX(-50%);
 }
 
 .currentNews ul li p {
@@ -132,6 +149,7 @@ section {
     margin-bottom: 4px;
     font-size: 18pt;
 }
+
 
 .currentNews ul li{
     color: white;
@@ -166,13 +184,19 @@ section {
     flex-direction: column;
     position: absolute;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0);
+    height: 60vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
+    border-top: 2pt solid rgba(240,173,91,0.2);
 }
 
 .contentAbout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     overflow: hidden;
+    width: 70vw;
+    margin-left: 50%;
+    transform: translateX(-50%);
 }
 
 .contentAbout p {
@@ -180,19 +204,27 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0);
-    padding: 15%;
-    border-radius: 5px;
+    padding: 0 5vw 0 5vw ;
+    border-radius: 0 5px 5px 0;
     font-size: 20pt;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 5vh 0 5vh 0;
+    border-top: 2pt solid rgba(240,173,91,0.2);
     border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
-    border-left: 2pt solid rgba(0, 0, 0, 0.2);
+    border-right: 2pt solid rgba(0, 0, 0, 0.2);
 }
 .contentAbout img {
     width: 100%;
     max-width: 100vw;
-    height: 93vh;
+    height: calc(50vh);
     object-fit: cover;
+    border-radius: 5px 0 0 5px;
+    margin: 5vh 0 5vh 0;
+    border-top: 2pt solid rgba(240,173,91,0.2);
+    border-left: 2pt solid rgba(240,173,91,0.2);
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
 }
+
 
 @media only screen and (max-width: 1000px) {   
     .about {
@@ -211,25 +243,35 @@ section {
     }
     .contentAbout p {
         position: absolute; 
-        bottom: 0; 
+        bottom: 5vh; 
         left: 0;
-        width: 100vw; 
-        height: 50%;
+        width: 100%;
+        padding: 0 25px 0 25px;
+        height: calc(50% - 5vh);
+        font-size: 18pt;
+        margin: 0;
+        border-radius: 0 0 5px 5px;
+        border-top: 0pt;
+        border-left: 2pt solid rgba(240,173,91,0.2);
+        border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
+        border-right: 2pt solid rgba(0, 0, 0, 0.2);
     }
     .contentAbout img {
         position: absolute; 
         top: 0; 
-        left: 0;
-        width: 100vw; 
-        height: 50%;
+        width: 100%; 
+        height: calc(50% - 5vh);
+        border-radius: 5px 5px 0 0;
+        border-top: 2pt solid rgba(240,173,91,0.2);
+        border-left: 2pt solid rgba(240,173,91,0.2);
+        border-bottom: 0pt;
+        border-right: 2pt solid rgba(0, 0, 0, 0.2);
     }
 }
 /* ON TOUR */
 /*----------------------------*/
 .onTour {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 0;
     z-index: 1;
 }
 
@@ -246,13 +288,6 @@ section {
     transform: translateX(-50%);
     right: auto;
     z-index:2;
-    border-left: 1pt solid rgba(0, 113, 138, 0.2);
-    border-bottom: 1pt solid rgba(0, 113, 138, 0.2);
-    background: linear-gradient(to right,
-    rgba(0, 0, 0, 0.5) 0%,
-    rgba(0, 113, 138, 0.8) 30%,
-    rgba(0, 113, 138, 0.8) 70%,
-    rgba(0, 0, 0, 0.5) 100% );
 }
 
 .tourSlideBar ul {
@@ -279,67 +314,70 @@ section {
     padding-right: 15pt;
 }
 
-.tourText {
-    display: flex;
-    flex-grow: 1; 
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    width: 50vw;
-    height: 50%;
-    left:0;
-    top: 0;
+.tourDescription {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70vw;
+    margin-left: 15vw;
+    height: 25vh;
+    margin-top: 5vh;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.tourMainPicture {
+.tourDescription p {
+    width: 100%;
+    background-color: aqua;
+    padding: 15px;
+}
+
+.tourContainer {
     display: flex;
-    flex-direction: row;
-    position: absolute;
     width: 100vw;
-    height: 50%;
-    right: 0;
-    top: 0;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.tourMainPicture img {
-    right:0;
+.tourScroller {
     min-width: 100vw;
-    height: auto;
+    height: 60vh;
     object-fit: cover;
     scroll-snap-align: start;
     scroll-behavior: smooth;
 }
 
-.tourDates iframe {
-    position: absolute;
-    width: 50vw;
-    left: 50%;
+.tourDescription img {
+    position: relative;
+    max-height: 25vh;
+    min-height: 100%;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    margin-left: 50%;
     transform: translateX(-50%);
-    top: 50vh;
-    min-width: 800px;
-    height: 30vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    top:0;
+}
+
+.tourDates iframe {
+    width: 35vw;
+    height: 25vh;
     border-radius: 0 0 20px 20px;
     background-color: rgba(0, 0, 0, 0.2);
     padding: 5px;
+    transform: translate(50vw, -25vh);
 }
 
 .tourPictures {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     grid-gap: 5px;
-    grid-auto-flow: dense;
-    position: absolute;
-    width: 50vw;
-    min-width: 800px;
-    height: 15vh;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 43vh;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    grid-auto-flow:row;
+    width: 35vw;
+    height: 25vh;
+    margin-left: 15vw;
     padding: 5px;
     background-color: rgba(0, 0, 0, 0.2);
 }
