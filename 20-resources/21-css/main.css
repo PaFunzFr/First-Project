@@ -87,7 +87,7 @@ section {
 .sectionTitle {
     display: flex;
     position: absolute;
-    color: orange;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 6vh;
     left: 20px;
     top: calc(8vh - 50px);
@@ -367,7 +367,7 @@ section {
     object-fit: cover;
     padding: 0;
     opacity: 0.8;
-    filter: grayscale(30%);
+    filter: grayscale(10%);
 }
 
 .tourBottom {
