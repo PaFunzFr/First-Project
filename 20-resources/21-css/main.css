@@ -70,6 +70,7 @@ main {
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: calc(100vh - 7vh);
+    width: 100vw;
     margin-top: 5vh;
 }
 
@@ -87,15 +88,17 @@ section {
     display: flex;
     position: absolute;
     color: orange;
-    font-size: 30pt;
-    top: calc(15vh - 50px);
+    font-size: 6vh;
+    left: 20px;
+    top: calc(8vh - 50px);
     font-family: 'Slackside One';
     z-index: 2;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 @media only screen and (max-width: 1000px) {
     .sectionTitle {
-        left: 15vw;
+        left: 20px;
         top: calc(8vh - 50px);
     }
 }
@@ -184,7 +187,6 @@ section {
         height: auto;
         max-height: 80%;
     }
-
 }
 
 /* ABOUT */
@@ -295,27 +297,23 @@ section {
 /*----------------------------*/
 .onTour {
     display: flex;
-    z-index: 1;
+    flex-direction: column;
 }
 
 .tourSlideBar {
-    color: rgb(0, 0, 0);
+    background-color: white;
     display: flex;
     position: absolute;
     align-items: center;
     justify-content: center;
-    width: 30vw;
+    width: 100vw;
     height: 5vh;
-    top: 7vh;
-    left: 25%;
-    transform: translateX(-50%);
+    top: 35vh;
+    background: linear-gradient(to left, rgba(154, 108, 23, 0.6) 0%, rgba(0, 77, 94, 0.8) 100%);
+    border-top: 2pt solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2pt solid rgba(0, 0, 0, 0.2);
     right: auto;
     z-index:2;
-}
-
-.tourSlideBar ul {
-    display: flex;
-    list-style: none;
 }
 
 .tourSlideBar img {
@@ -324,12 +322,15 @@ section {
 }
 
 .tourSlideBar p {
-    font-size: 40pt;
-    font-family: 'Slackside One';
+    font-size: 30pt;
+    font-family: "Lato", sans-serif;
+    font-weight: 200;
+    font-style: normal;
     margin: 0 auto;
-    transform: translateY(-1vh);
-    color: rgba(230, 162, 35, 1);
+    transform: translateY(-3pt);
+    color: white;
     box-shadow: black;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
 }
 
 .tourName {
@@ -337,144 +338,118 @@ section {
     padding-right: 15pt;
 }
 
-.tourDescription {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 70vw;
-    margin-left: 15vw;
-    height: 25vh;
-    margin-top: 5vh;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.tourDescription p {
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 15px;
-}
-
 .tourContainer {
     display: flex;
-    width: 100vw;
-    overflow-x: scroll;
+    flex-direction: row;
+    position: absolute;
     scroll-snap-type: x mandatory;
-    background-color: rgba(0, 0, 0, 0.2);
-}
-
-.tourScroller {
-    min-width: 100vw;
-    height: 60vh;
-    object-fit: cover;
-    scroll-snap-align: start;
-    scroll-behavior: smooth;
-}
-
-.tourDescription img {
-    position: relative;
-    max-height: 25vh;
-    min-height: 100%;
-    height: auto;
+    overflow-x: scroll;
+    height: calc(100vh - 7vh);
     width: 100%;
-    object-fit: cover;
-    margin-left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    top:0;
 }
 
-.tourDates iframe {
-    width: 35vw;
-    height: 25vh;
-    border-radius: 0 0 5px 0;
+.tourSlide {
+    width: 100vw;
+    scroll-snap-align: start;
+}
+
+.Hauptbild_oben {
+    height: 40vh;
+    background: linear-gradient(to left, rgba(230, 162, 35, 0.8) 0%, rgba(0, 113, 138, 0.8) 100%);
+}
+
+.Hauptbild_oben img {
+    height: auto;
+    min-height: 40vh;
+    max-height: 40vh;
+    width: 100vw;
+    min-width: 100%;
+    object-fit: cover;
+    padding: 0;
+    opacity: 0.8;
+    filter: grayscale(30%);
+}
+
+.tourBottom {
+    display: flex;
+    height: calc(40vh - 7vh);
+} 
+
+.tourInfo {
+    font-family: "Lato", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    width: 50vw;
+    color:white;
+    padding: 15px;
+    top: 60vh;
+    left: 0;
+    bottom: 0;
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    transform: translate(50vw, -25vh);
+    z-index: 2;
+    overflow: auto;
 }
 
 .tourPictures {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-gap: 5px;
-    grid-auto-flow:row;
-    width: 35vw;
-    height: 25vh;
-    margin-left: 15vw;
+    background: linear-gradient(to left, rgba(230, 162, 35, 0.3) 0%, rgba(0, 113, 138, 0.3) 100%);
+    overflow: auto;
+    white-space: nowrap;
     padding: 5px;
-    background-color: rgba(0, 0, 0, 0.2);
+    height: 20vh;
+    overflow-y: hidden;
 }
 
-.imgPattern {
-    background-color: aquamarine;
-    opacity: 0.3;
+.tourPictures img {
+    max-height: 17vh;
+    min-height: 100%;
+    height: auto;
+    width: 25%;
+    object-fit: cover;
+    min-width: 240px;
+    max-width: 300px;
+    filter: grayscale(40%);
+    opacity: 0.7;
     border-radius: 5px;
-    height: 100%;
 }
 
-.imgPattern:hover {
+.tourPictures img:hover {
+    filter: grayscale(0%);
     opacity: 1;
+    border-top: 2pt solid rgba(240,173,91,0.5);
+    border-left: 2pt solid rgba(240,173,91,0.5);
+    border-bottom: 2pt solid rgba(255, 255, 255, 0.3);
+    border-right: 2pt solid rgba(255, 255, 255, 0.3);
+}
+
+.tourVideo {
+    width: 50vw;
+    color:white;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 60vh;
+}
+
+.tourVideo iframe {
+    width: 100%;
+    height: 95%;
+    padding: 3vh 5%;
+    filter: grayscale(50%);
+    opacity: 0.7;
+}
+
+.tourVideo iframe:hover {
+    opacity: 0.8;
+    filter: grayscale(30%);
 }
 
 @media only screen and (max-width: 1000px) {   
     .tourScroller {
-        height: calc(100vh - 5vh);
-        margin-top: 0;
-        transform: translateY(15vh);
-    }
 
-    .tourDescription {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
-        width: 70vw;
-        margin-left: 15vw;
-        height: 30vh;
-        margin-top: -5vh;
-        background-color: rgba(0, 0, 0, 0.2);
-    }
-
-    .tourDescription p {
-        position: relative;
-        max-height: 10vh;
-        overflow: scroll;
-        height: 10vh;
-        width: 100%;
-    }
-
-    .tourDescription img {
-        position: relative;
-        max-height: 20vh;
-        min-height: 20vh;
-        height: auto;
-        width: 100%;
-        object-fit: cover;
-        margin-left: 50%;
-        padding: 5px;
-        top:0;
-    }
-    
-    .tourDates iframe {
-        width: 70vw;
-        height: 30vh;
-        border-radius: 0 0 5px 0;
-        background-color: rgba(0, 0, 0, 0.2);
-        padding: 0 5px 5px 5px;
-        transform: translate(15vw, 0vh);
-    }
-
-    .tourPictures {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(1, 1fr);
-        grid-gap: 0 5px;
-        grid-auto-flow:row;
-        width: 70vw;
-        height: 15vh;
-        overflow: auto;
-        white-space: nowrap;
-        padding: 5px;
     }
 }
+
 /* BIKE */
 /*----------------------------*/
 .bike {
@@ -542,6 +517,7 @@ header {
     font-family: "Lato", sans-serif;
     font-weight: 100;
     font-style: normal;
+    transform: translateY(-5px);
 }
 
 /* Main Icon / Logo */
@@ -673,9 +649,9 @@ footer svg {
     display: flex;
     position : fixed;
     align-items: center;
-    left: 4vw;
+    left: 3vw;
     margin-left:-5pt;
-    top: 50%;
+    top: 3vh;
     transform: translateY(-50%);
     z-index: 99;
 }
@@ -705,6 +681,7 @@ footer svg {
     font-size: 16px; 
     transform: rotate(-90deg);
     margin-left: -10px;
+    opacity: 0;
 }
 
 /* responsiveness of the button */
