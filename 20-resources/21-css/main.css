@@ -88,7 +88,7 @@ body {
 
 .closeButton {
     position: fixed;
-    left: 14vw;
+    left: 50%;
     top: 12vh;
     cursor: pointer;
     color: rgba(240,173,91,1);
@@ -266,6 +266,7 @@ section {
     font-family: "Lato", sans-serif;
     font-weight: 300;
     font-style: italic;
+    font-size: 20pt;
 }
 
 .aboutText p {
@@ -300,8 +301,28 @@ section {
     opacity: 0.9;
 }
 
-@media only screen and (max-width: 1000px) {   
+@media only screen and (max-width: 4000px) {   
+    .aboutText {
+        font-size: 30pt;
+    }
+}
 
+@media only screen and (max-width: 2000px) {   
+    .aboutText {
+        font-size: 24pt;
+    }
+}
+
+@media only screen and (max-width: 1400px) {   
+    .aboutText {
+        font-size: 16pt;
+    }
+}
+
+@media only screen and (max-width: 1000px) {   
+    .aboutText {
+        font-size: 14pt;
+    }
 }
 
 /* ON TOUR */
@@ -323,15 +344,29 @@ section {
     z-index:2;
 }
 
-.tourSlideBar img:first-child {
-    position: absolute;
+.backward {
+    position: fixed;
     height: auto;
-    right: 60px;
+    top: 36vh;
+    left: 20px;
+    z-index: 10;
+    cursor: pointer;
 }
-.tourSlideBar img:last-child {
-    position:absolute;
+.forward {
+    position: fixed;
     height: auto;
-    right: 10px;
+    top: 36vh;
+    right: 20px;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+.backward:hover {
+    transform: scale(1.2);
+}
+
+.forward:hover {
+    transform: scale(1.2);
 }
 
 .tourContainer {
@@ -351,9 +386,10 @@ section {
 
 .tourMainPicTop {
     height: 40vh;
+    filter: saturate(150%);
     background: linear-gradient(to left, rgba(230, 162, 35, 0.2) 0%, rgba(0, 113, 138, 0.8) 100%);
-    -webkit-mask-image: linear-gradient(black, transparent);
-    mask-image: linear-gradient(black, transparent);
+    -webkit-mask-image: linear-gradient(black 70%, transparent);
+    mask-image: linear-gradient(black 70%, transparent);
 }
 
 .tourMainPicTop img {
@@ -419,13 +455,16 @@ section {
     height: auto;
     width: 25%;
     object-fit: cover;
-    min-width: 240px;
-    max-width: 300px;
+    min-width: 400px;
     filter: grayscale(40%);
     opacity: 0.7;
     border-radius: 5px;
     margin: 0 5px 0 0;
 }
+
+.tourPicSingle:hover {
+    cursor: pointer;
+} 
 
 .tourPicSingle:hover {
     filter: grayscale(0%);
@@ -474,6 +513,9 @@ section {
         font-style: normal;
         font-size: 0.8em;
     }
+    .tourPicSingle  {
+        min-width: 260px;
+    }
 }
 
 @media only screen and (max-width: 500px) {   
@@ -482,7 +524,7 @@ section {
         font-weight: 300;
         font-style: normal;
         font-size: 14pt;
-        line-height: 11pt;
+        line-height: 12pt;
     }
     .tourText {
         font-family: "Lato", sans-serif;
