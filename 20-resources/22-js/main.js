@@ -105,7 +105,7 @@ function createNewsList() {
     const newsContainer = document.querySelector('.newsList');
     const uListNews = document.createElement('ul');
 
-    const newsListe = singleNews.map(listEntry => {
+    const newsList = singleNews.map(listEntry => {
 
         const li = document.createElement('li');
         li.classList.add('newsEntry');
@@ -133,43 +133,78 @@ createNewsList();
 /*----------------------------------------------------------------*/
 const singleTours = [
     {
-        tourId: 'mittenwald-23',
-        tourMainPic: '/02-resources/23-images/website_mittenwald.png',
+        tourId: 'suedtirol-23',
+        tourMainPic: '/02-resources/23-images/tours/23/sdtrl/main.jpg',
         tourSlidePics: [
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
+            '/02-resources/23-images/tours/23/sdtrl/1.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/2.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/3.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/4.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/5.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/6.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/7.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/8.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/9.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/10.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/11.jpg',
+            '/02-resources/23-images/tours/23/sdtrl/12.jpg',
         ],
-        tourTitle: 'Mittenwald im Spätsommer 2023',
+        tourTitle: 'Oberstdorf im Sommer 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://www.youtube.com/embed/DX8sO7tIMgY?si=x0oUty5TKu7AGB59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourVideo: '<iframe src="https://www.youtube.com/embed/QhI0L2oDoN0?si=eWWwP_L1qCeg5DJc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
     },
     {
-        tourId: 'oberstdorf-23',
-        tourMainPic: '/02-resources/23-images/website_mittenwald.png',
+        tourId: 'oberstdorf2-23',
+        tourMainPic: '/02-resources/23-images/tours/23/obstd2/main.jpg',
         tourSlidePics: [
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
-            '/02-resources/23-images/website_Meran.png',
+            '/02-resources/23-images/tours/23/obstd2/1.jpg',
+            '/02-resources/23-images/tours/23/obstd2/2.jpg',
+            '/02-resources/23-images/tours/23/obstd2/3.jpg',
+            '/02-resources/23-images/tours/23/obstd2/4.jpg',
+            '/02-resources/23-images/tours/23/obstd2/5.jpg',
+            '/02-resources/23-images/tours/23/obstd2/6.jpg',
+            '/02-resources/23-images/tours/23/obstd2/7.jpg',
+            '/02-resources/23-images/tours/23/obstd2/8.jpg',
+            '/02-resources/23-images/tours/23/obstd2/9.jpg',
         ],
         tourTitle: 'Oberstdorf im Sommer 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
         tourVideo: '<iframe src="https://www.youtube.com/embed/DX8sO7tIMgY?si=x0oUty5TKu7AGB59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+    },
+    {
+        tourId: 'mittenwald-23',
+        tourMainPic: '/02-resources/23-images/tours/23/mtwld/main.jpg',
+        tourSlidePics: [
+            '/02-resources/23-images/tours/23/mtwld/1.jpg',
+            '/02-resources/23-images/tours/23/mtwld/2.jpg',
+            '/02-resources/23-images/tours/23/mtwld/3.jpg',
+            '/02-resources/23-images/tours/23/mtwld/4.jpg',
+            '/02-resources/23-images/tours/23/mtwld/5.jpg',
+            '/02-resources/23-images/tours/23/mtwld/6.jpg',
+            '/02-resources/23-images/tours/23/mtwld/7.jpg',
+            '/02-resources/23-images/tours/23/mtwld/8.jpg',
+            '/02-resources/23-images/tours/23/mtwld/9.jpg',
+        ],
+        tourTitle: 'Mittenwald im Spätsommer 2023',
+        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
+        tourVideo: '<iframe src="https://youtube.com/embed/PMW21kjqFkY?si=jxVN8ibHPuB4gDr6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+    },
+    {
+        tourId: 'oberstdorf1-23',
+        tourMainPic: '/02-resources/23-images/tours/23/obstd1/main.jpg',
+        tourSlidePics: [
+            '/02-resources/23-images/tours/23/obstd1/1.jpg',
+            '/02-resources/23-images/tours/23/obstd1/2.jpg',
+            '/02-resources/23-images/tours/23/obstd1/3.jpg',
+            '/02-resources/23-images/tours/23/obstd1/4.jpg',
+            '/02-resources/23-images/tours/23/obstd1/5.jpg',
+            '/02-resources/23-images/tours/23/obstd1/6.jpg',
+            '/02-resources/23-images/tours/23/obstd1/7.jpg',
+            '/02-resources/23-images/tours/23/obstd1/8.jpg',
+        ],
+        tourTitle: 'Oberstdorf im Sommer 2023',
+        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
+        tourVideo: '<iframe src="https://youtube.com/embed/WyWRcwSDPDc?si=J4Euwr4kb6m0Fn-X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
     },
 ];
 
@@ -279,13 +314,18 @@ function openPopup(imageSrc) {
 
     const popupImage = document.createElement('img');
     popupImage.src = imageSrc;
+    //imagescaling
     popupImage.style.maxHeight = '80vh';
-    popupImage.style.maxWidth = '80vw';
+    popupImage.style.minHeight = '80vh';
+    popupImage.style.width = '80vw';
+    popupImage.style.objectFit= 'cover';
+    //position
     popupImage.style.position = 'fixed';
     popupImage.style.top = '50%';
     popupImage.style.left = '50%';
     popupImage.style.transform = 'translate(-50%, -50%)';
     popupImage.style.zIndex = '99';
+    //layout
     popupImage.style.borderRadius = '10px';
     popupImage.style.borderTop = '2pt solid rgba(240,173,91,0.4)';
     popupImage.style.borderLeft = '2pt solid rgba(240,173,91,0.4)';
@@ -326,3 +366,20 @@ function closePopup(popup) {
 
 
 createTourSlides();
+
+
+// Touslide Buttons
+
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollRightButton = document.querySelector('.forward');
+    const scrollLeftButton = document.querySelector('.backward');
+    const tourContainer = document.querySelector('.tourContainer');
+
+    scrollRightButton.addEventListener('click', function() {
+        tourContainer.scrollLeft += window.innerWidth;
+    });
+
+    scrollLeftButton.addEventListener('click', function() {
+        tourContainer.scrollLeft -= window.innerWidth;
+    });
+});
