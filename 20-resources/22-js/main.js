@@ -133,6 +133,16 @@ createNewsList();
 /*----------------------------------------------------------------*/
 const singleTours = [
     {
+        tourId: 'winterstein-23',
+        tourMainPic: '/02-resources/23-images/tours/23/sdtrl/main.jpg',
+        tourSlidePics: [
+            '/02-resources/23-images/tours/23/sdtrl/1.jpg',
+        ],
+        tourTitle: 'Ausflug am Winterstein 2023',
+        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/927065990?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+    },
+    {
         tourId: 'suedtirol-23',
         tourMainPic: '/02-resources/23-images/tours/23/sdtrl/main.jpg',
         tourSlidePics: [
@@ -151,7 +161,7 @@ const singleTours = [
         ],
         tourTitle: 'Oberstdorf im Sommer 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://www.youtube.com/embed/QhI0L2oDoN0?si=eWWwP_L1qCeg5DJc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourVideo: '<iframe src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'oberstdorf2-23',
@@ -169,7 +179,7 @@ const singleTours = [
         ],
         tourTitle: 'Oberstdorf im Sommer 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://www.youtube.com/embed/DX8sO7tIMgY?si=x0oUty5TKu7AGB59" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourVideo: '<iframe src="https://player.vimeo.com/video/927052150?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'mittenwald-23',
@@ -187,7 +197,7 @@ const singleTours = [
         ],
         tourTitle: 'Mittenwald im Spätsommer 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://youtube.com/embed/PMW21kjqFkY?si=jxVN8ibHPuB4gDr6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourVideo: '<iframe src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'oberstdorf1-23',
@@ -204,7 +214,7 @@ const singleTours = [
         ],
         tourTitle: 'Oberstdorf im Sommer 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://youtube.com/embed/WyWRcwSDPDc?si=J4Euwr4kb6m0Fn-X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourVideo: '<iframe src="https://player.vimeo.com/video/927066427?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
     },
 ];
 
