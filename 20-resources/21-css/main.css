@@ -267,6 +267,7 @@ section {
     font-weight: 300;
     font-style: italic;
     font-size: 20pt;
+    padding: 2vh 5vw;
 }
 
 .aboutText p {
@@ -278,6 +279,12 @@ section {
 .aboutText p:first-child {
     padding: 10px;
 }
+
+.aboutText p:last-child {
+    padding: 10px;
+    font-size: 8pt;
+}
+
 .container {
     position: absolute;
     height: auto;
@@ -322,6 +329,12 @@ section {
 @media only screen and (max-width: 1000px) {   
     .aboutText {
         font-size: 14pt;
+    }
+}
+
+@media only screen and (max-width: 700px) {   
+    .aboutText {
+        font-size: 10pt;
     }
 }
 
@@ -538,6 +551,18 @@ section {
 /*----------------------------*/
 .bike {
     background-color: rgba(0, 0, 0, 0);
+}
+
+.bikePic {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 80vw;
+    max-width: 80vw;
+    height: 80%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
 /* ARCHITECTURE */
