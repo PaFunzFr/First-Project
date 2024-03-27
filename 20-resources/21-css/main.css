@@ -505,6 +505,7 @@ section {
     height: 98%;
     filter: grayscale(30%);
     opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.6)
 }
 
 .tourVideo iframe:hover {
