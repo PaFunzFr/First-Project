@@ -134,9 +134,15 @@ createNewsList();
 const singleTours = [
     {
         tourId: 'winterstein-23',
-        tourMainPic: '/02-resources/23-images/tours/23/sdtrl/main.jpg',
+        tourMainPic: '/02-resources/23-images/tours/23/wntst/main.jpg',
         tourSlidePics: [
-            '/02-resources/23-images/tours/23/sdtrl/1.jpg',
+            '/02-resources/23-images/tours/23/wntst/1.jpg',
+            '/02-resources/23-images/tours/23/wntst/2.jpg',
+            '/02-resources/23-images/tours/23/wntst/3.jpg',
+            '/02-resources/23-images/tours/23/wntst/4.jpg',
+            '/02-resources/23-images/tours/23/wntst/5.jpg',
+            '/02-resources/23-images/tours/23/wntst/6.jpg',
+            '/02-resources/23-images/tours/23/wntst/7.jpg',
         ],
         tourTitle: 'Ausflug am Winterstein 2023',
         tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
