@@ -494,10 +494,10 @@ section {
     right: 0;
     bottom: 0;
     z-index: 2;
-    background-color: rgba(0, 0, 0, 0.2);
+
     top: 60vh;
-    -webkit-mask-image: linear-gradient(black 70%, transparent);
-    mask-image: linear-gradient(black 70%, transparent);
+    background-color: rgba(0, 0, 0, 0.4);
+
 }
 
 .tourVideo iframe {
@@ -505,7 +505,9 @@ section {
     height: 98%;
     filter: grayscale(30%);
     opacity: 0.8;
-    background-color: rgba(0, 0, 0, 0.6)
+    -webkit-mask-image: linear-gradient(black 70%, transparent);
+    mask-image: linear-gradient(black 70%, transparent);
+    border-left : 2pt solid rgba(0,0,0,0.2);
 }
 
 .tourVideo iframe:hover {
