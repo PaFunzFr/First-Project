@@ -91,12 +91,20 @@ getElements.forEach((el) => checkVisibility.observe(el));
 /*----------------------------------------------------------------*/
 const singleNews = [
     {
-        date: 'Januar 2024',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.'
+        date: 'März 2024',
+        text: 'Es ist soweit. Die Arbeiten an der Website haben nach der Konzeptphase begonnen. Es wird ein Tourblog, der primär für Familie & Freunde gedacht ist.'
+    },
+    {
+        date: 'Februar 2024',
+        text: 'Das vorest letzte Video aus 2023 ist fertiggestellt. Nun beginnt die Konzept- und Designphase der Website.'
     },
     {
         date: 'Januar 2024',
-        text: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.'
+        text: 'Beim Schneiden und Kreieren der Urlaubsvideos vom letzten Jahr kam die Idee, diese zusammen mit Bildern in meinem Website-Projekt zu implementieren.'
+    },
+    {
+        date: 'Dezember 2023',
+        text: 'Das Vorhaben, eine eigene Website zu erstellen, ist entstanden. Nun beginnt das Sammeln von Ideen über den Inhalt der Seite.'
     }
 ];
 
@@ -144,9 +152,9 @@ const singleTours = [
             '/02-resources/23-images/tours/23/wntst/6.jpg',
             '/02-resources/23-images/tours/23/wntst/7.jpg',
         ],
-        tourTitle: 'Ausflug am Winterstein 2023',
-        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://player.vimeo.com/video/927065990?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourTitle: 'Winterstein Herbst 2023',
+        tourText: 'Ein kleiner Spaziergang im goldenen Herbst entlang des Wildkatzenpfads am Winterstein bei Bad Nauheim. Hauptanlass war das Testen des neuen Equipments für Foto und Film für die nächsten Touren.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/927065990?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'suedtirol-23',
@@ -165,9 +173,9 @@ const singleTours = [
             '/02-resources/23-images/tours/23/sdtrl/11.jpg',
             '/02-resources/23-images/tours/23/sdtrl/12.jpg',
         ],
-        tourTitle: 'Oberstdorf im Sommer 2023',
-        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourTitle: 'Südtirol Herbst 2023',
+        tourText: 'Der Jahresurlaub in Südtirol war geprägt von fast schon unverschämt gutem Wetter. Die erste Woche verbrachten wir in Meran. Neben dem obligatorischem Wandern auf einigen Waalwegen sowie Besuch von Schloss Tirol bestiegen wir auch die Mutspitze und wurden mit einem phänomenalem Ausblick belohnt. Die zweite Woche vebrachten wir weniger touristisch im idyllischen Laas und starteten von dort einige Wanderungen.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/928711344?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'oberstdorf2-23',
@@ -183,9 +191,9 @@ const singleTours = [
             '/02-resources/23-images/tours/23/obstd2/8.jpg',
             '/02-resources/23-images/tours/23/obstd2/9.jpg',
         ],
-        tourTitle: 'Oberstdorf im Sommer 2023',
-        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://player.vimeo.com/video/927052150?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourTitle: 'Oberstdorf Spätsommer 2023',
+        tourText: 'Kurzer Ausflug nach Oberstdorf. Ein verlängertes Wochenende mit einer Bergtour zur Kanzelwand und Fellhorn. Zwei Radtouren zur Biberalpe sowie durch das Rohrmoos rundeten das Ganze ab.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/927052150?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'mittenwald-23',
@@ -201,9 +209,29 @@ const singleTours = [
             '/02-resources/23-images/tours/23/mtwld/8.jpg',
             '/02-resources/23-images/tours/23/mtwld/9.jpg',
         ],
-        tourTitle: 'Mittenwald im Spätsommer 2023',
-        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourTitle: 'Mittenwald Sommer 2023',
+        tourText: 'Eine Woche rund um Mittenwald. Einige Tage verbrachten wir am Walchen- und Kochelsee inklusive Thermenbesuch. Es folgte eine Radtour zum Karwendelhaus und eine Wanderung zur Hochlandhütte. An einem Regentag besuchten wir Garmisch-Partenkirchen.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/928709228?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>'
+    },
+    {
+        tourId: 'arnsburg-23',
+        tourMainPic: '/02-resources/23-images/tours/23/klstarn/main.jpg',
+        tourSlidePics: [
+            '/02-resources/23-images/tours/23/klstarn/1.jpg',
+            '/02-resources/23-images/tours/23/klstarn/2.jpg',
+            '/02-resources/23-images/tours/23/klstarn/3.jpg',
+            '/02-resources/23-images/tours/23/klstarn/4.jpg',
+            '/02-resources/23-images/tours/23/klstarn/5.jpg',
+            '/02-resources/23-images/tours/23/klstarn/6.jpg',
+            '/02-resources/23-images/tours/23/klstarn/7.jpg',
+            '/02-resources/23-images/tours/23/klstarn/8.jpg',
+            '/02-resources/23-images/tours/23/klstarn/9.jpg',
+            '/02-resources/23-images/tours/23/klstarn/10.jpg',
+            '/02-resources/23-images/tours/23/klstarn/11.jpg',
+        ],
+        tourTitle: 'Rund ums Kloster Arnsburg',
+        tourText: 'Ein Tagesausflug rund um das Kloster Arnsburg bei Lich. Highlight war das Kloster selbst und das Megalithgrab zwischen Münzenberg und Muschenheim. Der Ausklang des Tages fand im Landhaus Klosterwald statt.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/928713044?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>'
     },
     {
         tourId: 'oberstdorf1-23',
@@ -218,9 +246,9 @@ const singleTours = [
             '/02-resources/23-images/tours/23/obstd1/7.jpg',
             '/02-resources/23-images/tours/23/obstd1/8.jpg',
         ],
-        tourTitle: 'Oberstdorf im Sommer 2023',
-        tourText: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo id odio consequuntur sequi accusamus, distinctio iusto ea! Volga, obcaecati sit.',
-        tourVideo: '<iframe src="https://player.vimeo.com/video/927066427?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>'
+        tourTitle: 'Oberstdorf Sommer 2023',
+        tourText: 'Der erste Ausflug für dieses Jahr: Die Camping Prämiere für unser neues Wohnmobil. Es geht zu Fuß rauf aufs Rubihorn. Mit dem Rad ging es im Anschluss hoch zur Gutenalpe. Den Abschluss bildete der Besuch in der Breitachklamm.',
+        tourVideo: '<iframe src="https://player.vimeo.com/video/927066427?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>'
     },
 ];
 
@@ -384,7 +412,7 @@ function closePopup(popup) {
 createTourSlides();
 
 
-// Touslide Buttons
+// Tourslide Buttons
 
 document.addEventListener('DOMContentLoaded', function() {
     const scrollRightButton = document.querySelector('.forward');
