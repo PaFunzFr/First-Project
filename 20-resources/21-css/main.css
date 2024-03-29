@@ -471,7 +471,6 @@ section {
     min-width: 400px;
     filter: grayscale(40%);
     opacity: 0.7;
-    border-radius: 5px;
     margin: 0 5px 0 0;
 }
 
@@ -494,10 +493,8 @@ section {
     right: 0;
     bottom: 0;
     z-index: 2;
-
     top: 60vh;
     background-color: rgba(0, 0, 0, 0.4);
-
 }
 
 .tourVideo iframe {
@@ -507,7 +504,7 @@ section {
     opacity: 0.8;
     -webkit-mask-image: linear-gradient(black 70%, transparent);
     mask-image: linear-gradient(black 70%, transparent);
-    border-left : 2pt solid rgba(0,0,0,0.2);
+    border-left : 2pt solid rgba(0, 0, 0, 0.1);
 }
 
 .tourVideo iframe:hover {
